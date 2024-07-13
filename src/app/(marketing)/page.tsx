@@ -1,9 +1,9 @@
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <div>
-        <h1>個人開発をサポートするアプリ</h1>
-      </div>
-    </main>
+    <div className='min-h-[400px] flex-1 flex justify-center items-center'>
+      <h1 className='text-xl leading-tight font-bold'>
+        個人開発をサポートするアプリ
+      </h1>
+    </div>
   );
 }
