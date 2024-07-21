@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from 'react';
+import { forwardRef, InputHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type TInputProps = {
@@ -8,8 +8,8 @@ type TInputProps = {
 
 const inputStyle = {
   type: {
-    default: 'border border-gray-300',
-    fill: 'bg-gray-100',
+    default: 'border border-gray-400',
+    fill: 'bg-gray-200 border border-gray-300',
   },
   size: {
     sm: 'h-[32px] text-sm',
@@ -18,21 +18,21 @@ const inputStyle = {
   },
 } as const;
 
-export const Input: FC<TInputProps> = ({
-  inputType = 'default',
-  inputSize = 'base',
-  className,
-  ...rest
-}) => {
-  return (
-    <input
-      className={twMerge(
-        'px-3 rounded-lg outline-none w-full text-gray-800',
-        inputStyle.type[inputType],
-        inputStyle.size[inputSize],
-        className,
-      )}
-      {...rest}
-    />
-  );
-};
+export const Input = forwardRef<HTMLInputElement, TInputProps>(
+  ({ inputType = 'default', inputSize = 'base', className, ...rest }, ref) => {
+    return (
+      <input
+        className={twMerge(
+          'px-3 rounded-lg outline-none w-full text-gray-800',
+          inputStyle.type[inputType],
+          inputStyle.size[inputSize],
+          className,
+        )}
+        ref={ref}
+        {...rest}
+      />
+    );
+  },
+);
+
+Input.displayName = 'Input';

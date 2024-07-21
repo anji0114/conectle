@@ -1,7 +1,12 @@
-import { LoginContents } from './contents';
+import { Metadata } from 'next';
+import { LoginContents } from '@/features/auth/components/LoginContents/LoginContents';
 
-const page = () => {
+export const metadata: Metadata = {
+  title: 'ログイン',
+};
+
+const LoginPage = () => {
   return <LoginContents />;
 };
 
-export default page;
+export default LoginPage;
