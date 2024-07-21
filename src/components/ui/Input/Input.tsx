@@ -12,9 +12,9 @@ const inputStyle = {
     fill: 'bg-gray-100',
   },
   size: {
-    sm: 'h-[32px] px-3',
-    base: 'h-[40px] px-4 text-sm',
-    lg: 'h-[48px] px-4',
+    sm: 'h-[32px] text-sm',
+    base: 'h-[40px] text-sm',
+    lg: 'h-[48px]',
   },
 } as const;
 
@@ -27,7 +27,7 @@ export const Input: FC<TInputProps> = ({
   return (
     <input
       className={twMerge(
-        'rounded-lg outline-none w-full text-gray-800',
+        'px-3 rounded-lg outline-none w-full text-gray-800',
         inputStyle.type[inputType],
         inputStyle.size[inputSize],
         className,
