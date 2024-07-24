@@ -34,7 +34,7 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
 
           <h1 className='text-center font-bold text-2xl leading-none'>
             {authType === 'login' && 'ログイン'}
-            {authType === 'register' && '新規会員登録'}
+            {authType === 'register' && '新規登録'}
           </h1>
           <form onSubmit={onSubmit}>
             <div className='space-y-6'>
@@ -42,7 +42,11 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
                 <Input {...register('email')} inputType='fill' />
               </InputSection>
               <InputSection label='パスワード' caution='半角英数字8文字以上'>
-                <Input {...register('password')} inputType='fill' />
+                <Input
+                  {...register('password')}
+                  inputType='fill'
+                  type='password'
+                />
               </InputSection>
               <div className='text-center'>
                 <Button

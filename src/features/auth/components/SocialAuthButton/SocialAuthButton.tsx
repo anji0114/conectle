@@ -40,7 +40,7 @@ export const SocialAuthButton: FC<TSocialAuthButtonProps> = ({
         {socialType === 'google' && 'Google'}
         {socialType === 'github' && 'Github'}で
         {authType === 'login' && 'ログイン'}
-        {authType === 'register' && '新規会員登録'}する
+        {authType === 'register' && '新規登録'}
       </span>
     </button>
   );
