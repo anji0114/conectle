@@ -8,15 +8,5 @@
     "plugin:prettier/recommended"
   ],
   "plugins": [],
-  "parser": "@typescript-eslint/parser",
-  "rules": {
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "order": "asc"
-        }
-      }
-    ]
-  }
+  "parser": "@typescript-eslint/parser"
 }
