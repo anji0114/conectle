@@ -19,6 +19,6 @@ export const login = async (value: TAuthForm) => {
     throw new Error('メールまたはパスワードに誤りがあります');
   }
 
-  revalidatePath('/projects', 'layout');
-  redirect('/projects');
+  revalidatePath('/setting/user', 'layout');
+  redirect('/setting/user');
 };

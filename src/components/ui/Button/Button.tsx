@@ -12,7 +12,7 @@ import { twMerge } from 'tailwind-merge';
 export type TButtonProps = {
   disabled?: boolean;
   isLoading?: boolean;
-  buttonType?: 'dark' | 'blue' | 'red' | 'gray' | 'grayRed';
+  buttonType?: 'dark' | 'blue' | 'red' | 'gray' | 'grayRed' | 'plain';
   buttonSize?: 'xs' | 'sm' | 'base' | 'lg';
   width?: `${number}px` | `${number}%` | 'auto';
   href?: string;
@@ -27,11 +27,10 @@ export type TButtonProps = {
 };
 
 const style = {
-  default:
-    'relative  inline-flex justify-center items-center font-medium w-full',
+  default: 'relative inline-flex justify-center items-center font-bold w-full',
   size: {
     xs: 'px-2 h-6 text-xs rounded',
-    sm: 'px-3 h-8 text-sm rounded-md',
+    sm: 'px-3 pt-[1px] h-8 text-xs rounded-md',
     base: 'px-4 h-10 text-sm rounded-lg',
     lg: 'px-6 h-12 text-sm rounded-lg',
   },
@@ -41,6 +40,7 @@ const style = {
     red: 'text-white bg-danger',
     gray: 'text-gray-900 bg-gray-200 border border-gray-300',
     grayRed: 'text-danger bg-gray-200 border border-gray-300 ',
+    plain: 'bg-white text-gray-900 border border-gray-400',
   },
   disable: 'text-gray-100 bg-gray-400',
 };

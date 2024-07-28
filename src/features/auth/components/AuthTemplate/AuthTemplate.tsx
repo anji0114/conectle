@@ -4,16 +4,26 @@ import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
 import { InputSection } from '@/features/auth/components/InputSection/InputSection';
 import { UseFormRegister } from 'react-hook-form';
-import { TAuthForm } from '@/features/auth/config/authSchema';
+import { TLoginForm, TRegisterForm } from '@/features/auth/config/authSchema';
 import { SocialAuthButton } from '../SocialAuthButton/SocialAuthButton';
 
-type TAuthTemplateProps = {
+type TAuthForm = {
   errorMessage: string;
-  authType: 'login' | 'register';
   isValid: boolean;
   onSubmit: () => void;
-  register: UseFormRegister<TAuthForm>;
 };
+
+type TLoginFormProps = {
+  authType: 'login';
+  register: UseFormRegister<TLoginForm>;
+} & TAuthForm;
+
+type TRegisterFormProps = {
+  authType: 'register';
+  register: UseFormRegister<TRegisterForm>;
+} & TAuthForm;
+
+type TAuthTemplateProps = TLoginFormProps | TRegisterFormProps;
 
 export const AuthTemplate: FC<TAuthTemplateProps> = ({
   errorMessage,
@@ -38,16 +48,29 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
           </h1>
           <form onSubmit={onSubmit}>
             <div className='space-y-6'>
+              {authType === 'register' && (
+                <InputSection
+                  label='ユーザーネーム'
+                  caution='半角英数字4文字以上'
+                >
+                  <Input {...register('username')} inputType='fill' />
+                </InputSection>
+              )}
+
               <InputSection label='メールアドレス'>
-                <Input {...register('email')} inputType='fill' />
+                <Input
+                  {...(register as UseFormRegister<TLoginForm>)('email')}
+                  inputType='fill'
+                />
               </InputSection>
               <InputSection label='パスワード' caution='半角英数字8文字以上'>
                 <Input
-                  {...register('password')}
+                  {...(register as UseFormRegister<TLoginForm>)('password')}
                   inputType='fill'
                   type='password'
                 />
               </InputSection>
+
               <div className='text-center'>
                 <Button
                   buttonType='dark'
