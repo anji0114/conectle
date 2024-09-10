@@ -9,6 +9,7 @@ export const deleteUser = async (id: string) => {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ROLE_KEY!,
   );
+
   const { error } = await supabase.auth.admin.deleteUser(id);
 
   if (error) {
