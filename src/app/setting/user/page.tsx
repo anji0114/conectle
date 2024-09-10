@@ -1,7 +1,7 @@
-import React from 'react';
+import { SettingUserContents } from '@/features/setting/user/components/SettingUserContents/SettingUserContents';
 
-const page = () => {
-  return <div>ユーザー設定</div>;
+const UserSettingPage = async () => {
+  return <SettingUserContents />;
 };
 
-export default page;
+export default UserSettingPage;

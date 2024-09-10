@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { authSchema, TAuthForm } from '@/features/auth/config/authSchema';
+import { loginSchema, TLoginForm } from '@/features/auth/config/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { login } from '@/features/auth/services/login';
 import { AuthTemplate } from '@/features/auth/components/AuthTemplate/AuthTemplate';
@@ -14,13 +14,13 @@ export const LoginContents = () => {
     handleSubmit,
     reset,
     formState: { isValid },
-  } = useForm<TAuthForm>({
+  } = useForm<TLoginForm>({
     defaultValues: { password: '', email: '' },
-    resolver: zodResolver(authSchema),
+    resolver: zodResolver(loginSchema),
   });
 
   const onSubmit = useCallback(
-    async (value: TAuthForm) => {
+    async (value: TLoginForm) => {
       setErrorMessage('');
       try {
         await login(value);

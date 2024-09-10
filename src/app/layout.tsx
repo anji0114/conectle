@@ -4,6 +4,7 @@ import { twMerge } from 'tailwind-merge';
 import '@/styles/globals.css';
 import { siteConfig } from '@/configs/site';
 import { rootUrl } from '@/configs/url';
+import { QueryProvider } from '@/components/providers/queryProvider';
 
 const notoSans = Noto_Sans_JP({ subsets: ['latin'] });
 
@@ -59,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang='ja' suppressHydrationWarning={true}>
       <body className={twMerge(notoSans.className, 'text-gray-900')}>
-        {children}
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );
