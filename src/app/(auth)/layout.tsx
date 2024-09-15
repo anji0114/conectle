@@ -1,5 +1,4 @@
 import { FC, PropsWithChildren } from 'react';
-import { MarketingLayout as MarketingLayoutComponent } from '@/components/layouts/MarketingLayout/MarketingLayout';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
@@ -11,7 +10,7 @@ const AuthLayout: FC<PropsWithChildren> = async ({ children }) => {
 
   if (user) return redirect('/');
 
-  return <MarketingLayoutComponent>{children}</MarketingLayoutComponent>;
+  return <>{children}</>;
 };
 
 export default AuthLayout;

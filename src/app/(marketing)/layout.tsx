@@ -1,8 +1,13 @@
 import { FC, PropsWithChildren } from 'react';
-import { MarketingLayout as MarketingLayoutComponent } from '@/components/layouts/MarketingLayout/MarketingLayout';
+import { Header } from './layouts/Header/Header';
 
 const MarketingLayout: FC<PropsWithChildren> = ({ children }) => {
-  return <MarketingLayoutComponent>{children}</MarketingLayoutComponent>;
+  return (
+    <div>
+      <Header />
+      <div>{children}</div>
+    </div>
+  );
 };
 
 export default MarketingLayout;
