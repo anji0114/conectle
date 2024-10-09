@@ -1,1 +1,1 @@
-export const rootUrl = 'https://localhost:3000';
+export const rootUrl = process.env.NEXT_PUBLIC_SITE_URL;
