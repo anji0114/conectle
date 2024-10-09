@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createClient } from '@/utils/supabase/server';
 
 export const GET = async () => {
@@ -45,7 +45,7 @@ export const GET = async () => {
   }
 };
 
-export const PUT = async (req: NextRequest) => {
+export const PUT = async () => {
   try {
     const supabase = createClient();
     const {
