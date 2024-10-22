@@ -4,11 +4,11 @@ import { FC, useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/Button/Button';
 import { Input } from '@/components/ui/Input/Input';
-import { InputSection } from '@/features/auth/components/InputSection/InputSection';
+import { InputSection } from '@/app/(auth)/components/InputSection';
 import {
   TUserUpdateFormData,
   userUpdateSchema,
-} from '../../configs/userUpdateForm';
+} from '../constants/userUpdateForm';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 type TUpdateUserProps = {

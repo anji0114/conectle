@@ -2,10 +2,10 @@
 
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { loginSchema, TLoginForm } from '@/features/auth/config/authSchema';
+import { TLoginForm, loginSchema } from '@/app/(auth)/constants/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { login } from '@/features/auth/services/login';
-import { AuthTemplate } from '@/features/auth/components/AuthTemplate/AuthTemplate';
+import { login } from '@/app/(auth)/services/login';
+import { AuthTemplate } from '@/app/(auth)/components/AuthTemplate';
 
 export const LoginContents = () => {
   const [errorMessage, setErrorMessage] = useState('');

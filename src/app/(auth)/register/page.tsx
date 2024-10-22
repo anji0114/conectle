@@ -1,4 +1,4 @@
-import { RegisterContents } from '@/features/auth/components/RegisterContents/RegisterContents';
+import { RegisterContents } from '@/app/(auth)/components/RegisterContents';
 
 const RegisterPage = () => {
   return <RegisterContents />;

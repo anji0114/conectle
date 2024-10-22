@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { LoginContents } from '@/features/auth/components/LoginContents/LoginContents';
+import { LoginContents } from '@/app/(auth)/components/LoginContents';
 
 export const metadata: Metadata = {
   title: 'ログイン',
