@@ -3,7 +3,7 @@
 import { FC, useCallback } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 import { Modal } from '@/components/ui/Modal/Modal';
-import { deleteUser } from '../../services/deleteUser';
+import { deleteUser } from '../services/deleteUser';
 import { DialogTitle } from '@radix-ui/react-dialog';
 
 type TDeleteUserModalProps = {

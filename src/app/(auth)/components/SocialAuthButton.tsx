@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type TSocialAuthButtonProps = {

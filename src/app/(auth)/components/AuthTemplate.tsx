@@ -2,10 +2,10 @@ import { FC } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
-import { InputSection } from '@/features/auth/components/InputSection/InputSection';
+import { InputSection } from '@/app/(auth)/components/InputSection';
 import { UseFormRegister } from 'react-hook-form';
-import { TLoginForm, TRegisterForm } from '@/features/auth/config/authSchema';
-import { SocialAuthButton } from '../SocialAuthButton/SocialAuthButton';
+import { TLoginForm, TRegisterForm } from '@/app/(auth)/constants/authSchema';
+import { SocialAuthButton } from './SocialAuthButton';
 
 type TAuthForm = {
   errorMessage: string;

@@ -5,10 +5,10 @@ import { useForm } from 'react-hook-form';
 import {
   registerSchema,
   TRegisterForm,
-} from '@/features/auth/config/authSchema';
+} from '@/app/(auth)/constants/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { AuthTemplate } from '@/features/auth/components/AuthTemplate/AuthTemplate';
-import { register as signup } from '@/features/auth/services/register';
+import { AuthTemplate } from '@/app/(auth)/components/AuthTemplate';
+import { register as signup } from '@/app/(auth)/services/register';
 
 export const RegisterContents = () => {
   const [errorMessage, setErrorMessage] = useState('');

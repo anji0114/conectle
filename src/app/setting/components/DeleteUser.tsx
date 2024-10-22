@@ -2,7 +2,7 @@
 
 import { FC, useState } from 'react';
 import { Button } from '@/components/ui/Button/Button';
-import { DeleteUserModal } from '../DeleteUserModal/DeleteUserModal';
+import { DeleteUserModal } from './DeleteUserModal';
 
 type TDeleteUserProps = {
   id: string;

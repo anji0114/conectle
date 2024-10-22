@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/utils/supabase/server';
-import { TLoginForm } from '../config/authSchema';
+import { TLoginForm } from '../constants/authSchema';
 
 export const login = async (value: TLoginForm) => {
   const supabase = createClient();

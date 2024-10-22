@@ -1,4 +1,4 @@
-import { LogoutButton } from '@/features/demo/components/LogoutButton/LogoutButton';
+import { LogoutButton } from '@/components/view/LogoutButton';
 import Link from 'next/link';
 import React, { FC, PropsWithChildren } from 'react';
 

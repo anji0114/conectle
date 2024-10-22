@@ -2,8 +2,8 @@
 
 import { Container } from '@/components/ui/Container/Container';
 import { useUser } from '@/hooks/useUser';
-import { DeleteUser } from '../DeleteUser/DeleteUser';
-import { UpdateUser } from '../UpdateUser/UpdateUser';
+import { DeleteUser } from './DeleteUser';
+import { UpdateUser } from './UpdateUser';
 
 export const SettingUserContents = () => {
   const { data } = useUser();
