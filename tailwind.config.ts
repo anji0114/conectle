@@ -22,7 +22,6 @@ const config: Config = {
         '5xl': '1.75rem',
       },
       lineHeight: {
-        100: '1',
         150: '1.5',
         180: '1.8',
       },
