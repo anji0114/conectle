@@ -1,4 +1,4 @@
-import { SettingUserContents } from '../components/SettingUserContents';
+import { SettingUserContents } from '@//app/setting/components/SettingUserContents';
 
 const UserSettingPage = async () => {
   return <SettingUserContents />;

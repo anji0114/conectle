@@ -1,12 +1,12 @@
-import clsx from 'clsx';
 import Link from 'next/link';
-import {
+import type {
   FC,
   ReactNode,
   HTMLAttributeAnchorTarget,
   MouseEvent,
-  memo,
 } from 'react';
+import { memo } from 'react';
+import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 export type TButtonProps = {
@@ -74,8 +74,8 @@ const ButtonContent: FC<
       )}
     >
       {isLoading && (
-        <span className='absolute left-1/2 top-[calc(50%_+_1px)] -translate-x-1/2 -translate-y-1/2  h-4 w-4'>
-          <span className='inline-block w-full h-full animate-spin rounded-full border-2 border-white border-t-transparent' />
+        <span className='absolute left-1/2 top-[calc(50%_+_1px)] size-4 -translate-x-1/2  -translate-y-1/2'>
+          <span className='inline-block size-full animate-spin rounded-full border-2 border-white border-t-transparent' />
         </span>
       )}
       <span

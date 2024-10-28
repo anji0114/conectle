@@ -1,8 +1,8 @@
 'use server';
 
-import { createClient } from '@supabase/supabase-js';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { createClient } from '@supabase/supabase-js';
 
 export const deleteUser = async (id: string) => {
   const supabase = createClient(

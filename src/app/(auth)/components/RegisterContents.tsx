@@ -1,13 +1,11 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import {
-  registerSchema,
-  TRegisterForm,
-} from '@/app/(auth)/constants/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { AuthTemplate } from '@/app/(auth)/components/AuthTemplate';
+import type { TRegisterForm } from '@/app/(auth)/constants/authSchema';
+import { registerSchema } from '@/app/(auth)/constants/authSchema';
 import { register as signup } from '@/app/(auth)/services/register';
 
 export const RegisterContents = () => {

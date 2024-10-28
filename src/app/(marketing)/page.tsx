@@ -1,8 +1,8 @@
 const Home = () => {
   return (
     <div>
-      <div className='min-h-[400px] flex-1 flex justify-center items-center'>
-        <h1 className='text-xl leading-tight font-bold'>
+      <div className='flex min-h-[400px] flex-1 items-center justify-center'>
+        <h1 className='text-xl font-bold leading-tight'>
           個人開発をサポートするアプリ
         </h1>
       </div>

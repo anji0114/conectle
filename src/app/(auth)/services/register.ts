@@ -2,8 +2,8 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+import type { TRegisterForm } from '@//app/(auth)/constants/authSchema';
 import { createClient } from '@/utils/supabase/server';
-import { TRegisterForm } from '../constants/authSchema';
 
 export const register = async (value: TRegisterForm) => {
   const supabase = createClient();

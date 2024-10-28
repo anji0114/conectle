@@ -1,5 +1,5 @@
-import { Meta } from '@storybook/react';
 import { SimpleButton } from './SimpleButton';
+import type { Meta } from '@storybook/react';
 
 const meta = {
   title: 'components/ui/Button/SimpleButton',

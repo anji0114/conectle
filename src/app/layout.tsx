@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
+import { type Metadata } from 'next';
 import { twMerge } from 'tailwind-merge';
 import '@/styles/globals.css';
+import { QueryProvider } from '@/components/providers/queryProvider';
 import { siteConfig } from '@/configs/site';
 import { rootUrl } from '@/configs/url';
-import { QueryProvider } from '@/components/providers/queryProvider';
 
 const notoSans = Noto_Sans_JP({ subsets: ['latin'] });
 

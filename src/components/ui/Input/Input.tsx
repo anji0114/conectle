@@ -1,4 +1,5 @@
-import { forwardRef, InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type TInputProps = {

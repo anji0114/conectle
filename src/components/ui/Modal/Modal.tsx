@@ -1,9 +1,9 @@
 'use client';
 
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { XMarkIcon } from '@heroicons/react/16/solid';
 import * as Dialog from '@radix-ui/react-dialog';
 import { twMerge } from 'tailwind-merge';
-import { XMarkIcon } from '@heroicons/react/16/solid';
 
 export type TModalProps = {
   open: boolean;
@@ -31,10 +31,10 @@ export const Modal: FC<TModalProps> = ({
       />
       <Dialog.Portal>
         <Dialog.Content
-          className='fixed z-[1001] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100%_-_48px)] bg-white rounded-2xl shadow-lg max-h-[90vh]'
+          className='fixed left-1/2 top-1/2 z-[1001] max-h-[90vh] w-[calc(100%_-_48px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white shadow-lg'
           style={{ maxWidth }}
         >
-          <div className='p-10 space-y-10'>
+          <div className='space-y-10 p-10'>
             {title && (
               <Dialog.Title
                 className={twMerge(
@@ -47,7 +47,7 @@ export const Modal: FC<TModalProps> = ({
             )}
             <div>{children}</div>
           </div>
-          <button onClick={onCancel} className='absolute top-5 right-5 w-5 h-5'>
+          <button onClick={onCancel} className='absolute right-5 top-5 size-5'>
             <XMarkIcon />
           </button>
         </Dialog.Content>
