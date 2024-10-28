@@ -1,5 +1,5 @@
-import { Metadata } from 'next';
 import { LoginContents } from '@/app/(auth)/components/LoginContents';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'ログイン',

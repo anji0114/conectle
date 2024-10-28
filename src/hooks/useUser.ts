@@ -1,6 +1,6 @@
-import { QUERY_KEYS } from '@/configs/queryKeys';
-import { TUser } from '@/types/user';
 import { useQuery } from '@tanstack/react-query';
+import { QUERY_KEYS } from '@/configs/queryKeys';
+import type { TUser } from '@/types/user';
 
 const fetchUser = async (): Promise<TUser> => {
   try {

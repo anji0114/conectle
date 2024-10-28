@@ -1,11 +1,14 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import { InputSection } from '@/app/(auth)/components/InputSection';
+import type {
+  TLoginForm,
+  TRegisterForm,
+} from '@/app/(auth)/constants/authSchema';
 import { Button } from '@/components/ui/Button/Button';
 import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
-import { InputSection } from '@/app/(auth)/components/InputSection';
-import { UseFormRegister } from 'react-hook-form';
-import { TLoginForm, TRegisterForm } from '@/app/(auth)/constants/authSchema';
 import { SocialAuthButton } from './SocialAuthButton';
+import type { UseFormRegister } from 'react-hook-form';
 
 type TAuthForm = {
   errorMessage: string;
@@ -33,16 +36,16 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
   register,
 }) => {
   return (
-    <div className='py-12 px-10'>
+    <div className='px-10 py-12'>
       <Container maxWidth='688px'>
-        <div className='space-y-10 border border-gray-300 p-10 rounded-xl shadow-sm'>
+        <div className='space-y-10 rounded-xl border border-gray-300 p-10 shadow-sm'>
           {errorMessage && (
-            <p className='bg-danger text-center p-3 rounded text-white font-bold text-sm'>
+            <p className='bg-danger rounded p-3 text-center text-sm font-bold text-white'>
               {errorMessage}
             </p>
           )}
 
-          <h1 className='text-center font-bold text-2xl leading-none'>
+          <h1 className='text-center text-2xl font-bold leading-none'>
             {authType === 'login' && 'ログイン'}
             {authType === 'register' && '新規登録'}
           </h1>

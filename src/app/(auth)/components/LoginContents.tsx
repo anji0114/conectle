@@ -1,11 +1,12 @@
 'use client';
 
 import { useCallback, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { TLoginForm, loginSchema } from '@/app/(auth)/constants/authSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { login } from '@/app/(auth)/services/login';
+import { useForm } from 'react-hook-form';
 import { AuthTemplate } from '@/app/(auth)/components/AuthTemplate';
+import type { TLoginForm } from '@/app/(auth)/constants/authSchema';
+import { loginSchema } from '@/app/(auth)/constants/authSchema';
+import { login } from '@/app/(auth)/services/login';
 
 export const LoginContents = () => {
   const [errorMessage, setErrorMessage] = useState('');

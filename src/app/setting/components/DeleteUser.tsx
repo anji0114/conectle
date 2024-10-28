@@ -1,6 +1,7 @@
 'use client';
 
-import { FC, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/Button/Button';
 import { DeleteUserModal } from './DeleteUserModal';
 
@@ -13,9 +14,9 @@ export const DeleteUser: FC<TDeleteUserProps> = ({ id }) => {
 
   return (
     <div>
-      <div className='border border-danger p-10 rounded-lg space-y-6'>
+      <div className='space-y-6 rounded-lg border p-10'>
         <div className='space-y-2'>
-          <h2 className='text-xl font-bold text-danger'>ユーザーの削除</h2>
+          <h2 className='text-xl font-bold'>ユーザーの削除</h2>
           <p>このアクションはやり直すことができません。</p>
         </div>
         <div>

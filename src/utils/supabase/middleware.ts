@@ -1,5 +1,5 @@
-import { createServerClient } from '@supabase/ssr';
 import { NextResponse, type NextRequest } from 'next/server';
+import { createServerClient } from '@supabase/ssr';
 import { EXCLUDE_AUTH_PATHS } from '@/configs/excludeAuthPaths';
 
 export async function updateSession(request: NextRequest) {

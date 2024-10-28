@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 import { Header } from './components/Header';
 
 const MarketingLayout: FC<PropsWithChildren> = ({ children }) => {

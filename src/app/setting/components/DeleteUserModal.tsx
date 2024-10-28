@@ -1,10 +1,11 @@
 'use client';
 
-import { FC, useCallback } from 'react';
+import type { FC } from 'react';
+import { useCallback } from 'react';
+import { DialogTitle } from '@radix-ui/react-dialog';
+import { deleteUser } from '@//app/setting/services/deleteUser';
 import { Button } from '@/components/ui/Button/Button';
 import { Modal } from '@/components/ui/Modal/Modal';
-import { deleteUser } from '../services/deleteUser';
-import { DialogTitle } from '@radix-ui/react-dialog';
 
 type TDeleteUserModalProps = {
   open: boolean;
@@ -28,7 +29,7 @@ export const DeleteUserModal: FC<TDeleteUserModalProps> = ({
   return (
     <Modal open={open} onCancel={onCancel} maxWidth='540px'>
       <div className='space-y-4'>
-        <DialogTitle className='font-bold text-xl leading-none text-danger'>
+        <DialogTitle className='text-danger text-xl font-bold leading-none'>
           ユザーの削除
         </DialogTitle>
 
@@ -38,7 +39,7 @@ export const DeleteUserModal: FC<TDeleteUserModalProps> = ({
           本当によろしいでしょうか？
         </p>
       </div>
-      <div className='mt-10 flex justify-end gap-4 mx-[-40px] mb-[-20px] px-10 border-t border-gray-400 pt-5'>
+      <div className='mx-[-40px] mb-[-20px] mt-10 flex justify-end gap-4 border-t border-gray-400 px-10 pt-5'>
         <Button buttonSize='sm' buttonType='dark' onClick={onCancel}>
           キャンセル
         </Button>

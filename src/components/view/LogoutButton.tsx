@@ -1,9 +1,9 @@
 'use client';
 
-import { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { createClient } from '@/utils/supabase/client';
+import { useCallback } from 'react';
 import { Button } from '@/components/ui/Button/Button';
+import { createClient } from '@/utils/supabase/client';
 
 export const LogoutButton = () => {
   const supabase = createClient();

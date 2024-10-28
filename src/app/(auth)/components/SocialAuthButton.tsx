@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FC } from 'react';
+import type { FC } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type TSocialAuthButtonProps = {
@@ -34,7 +34,7 @@ export const SocialAuthButton: FC<TSocialAuthButtonProps> = ({
         alt={authType}
         width={20}
         height={20}
-        className='w-5 h-5'
+        className='size-5'
       />
       <span className='text-sm  font-bold'>
         {socialType === 'google' && 'Google'}

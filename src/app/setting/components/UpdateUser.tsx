@@ -1,15 +1,14 @@
 'use client';
 
-import { FC, useCallback, useEffect } from 'react';
+import type { FC } from 'react';
+import { useCallback, useEffect } from 'react';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import type { TUserUpdateFormData } from '@//app/setting/constants/userUpdateForm';
+import { userUpdateSchema } from '@//app/setting/constants/userUpdateForm';
+import { InputSection } from '@/app/(auth)/components/InputSection';
 import { Button } from '@/components/ui/Button/Button';
 import { Input } from '@/components/ui/Input/Input';
-import { InputSection } from '@/app/(auth)/components/InputSection';
-import {
-  TUserUpdateFormData,
-  userUpdateSchema,
-} from '../constants/userUpdateForm';
-import { zodResolver } from '@hookform/resolvers/zod';
 
 type TUpdateUserProps = {
   username: string;
@@ -37,7 +36,7 @@ export const UpdateUser: FC<TUpdateUserProps> = ({ username, full_name }) => {
   }, [reset, isDirty, username, full_name]);
 
   return (
-    <div className='border border-gray-400 p-10 rounded-lg'>
+    <div className='rounded-lg border border-gray-400 p-10'>
       <div>
         <h2 className='text-xl font-bold'>ユーザー情報編集</h2>
         <div className='mt-10 space-y-10'>
