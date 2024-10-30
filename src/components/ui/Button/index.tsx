@@ -19,6 +19,7 @@ export type TButtonProps = {
   icon?: ReactNode;
   iconPosition?: 'before' | 'after';
   target?: HTMLAttributeAnchorTarget;
+  // eslint-disable-next-line no-unused-vars
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
