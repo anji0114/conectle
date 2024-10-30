@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 import { createClient } from '@/utils/supabase/client';
 
 export const LogoutButton = () => {

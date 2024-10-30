@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { useCallback } from 'react';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import { deleteUser } from '@//app/setting/services/deleteUser';
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal/Modal';
 
 type TDeleteUserModalProps = {

@@ -4,7 +4,7 @@ import type {
   TLoginForm,
   TRegisterForm,
 } from '@/app/(auth)/constants/authSchema';
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
 import { SocialAuthButton } from './SocialAuthButton';
