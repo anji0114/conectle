@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import type { TLoginForm } from '@//app/(auth)/constants/authSchema';
+import { type TLoginForm } from '@/app/(auth)/_constants/authSchema';
 import { createClient } from '@/utils/supabase/server';
 
 export const login = async (value: TLoginForm) => {
