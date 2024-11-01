@@ -40,7 +40,7 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
       <Container maxWidth='688px'>
         <div className='space-y-10 rounded-xl border border-gray-300 p-10 shadow-sm'>
           {errorMessage && (
-            <p className='bg-danger rounded p-3 text-center text-sm font-bold text-white'>
+            <p className='rounded p-3 text-center text-sm font-bold text-white'>
               {errorMessage}
             </p>
           )}
