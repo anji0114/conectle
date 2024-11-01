@@ -3,10 +3,12 @@
 import { useCallback, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { AuthTemplate } from '@/app/(auth)/components/AuthTemplate';
-import type { TLoginForm } from '@/app/(auth)/constants/authSchema';
-import { loginSchema } from '@/app/(auth)/constants/authSchema';
-import { login } from '@/app/(auth)/services/login';
+import { AuthTemplate } from '@/app/(auth)/_components/AuthTemplate';
+import {
+  type TLoginForm,
+  loginSchema,
+} from '@/app/(auth)/_constants/authSchema';
+import { login } from '@/app/(auth)/_services/login';
 
 export const LoginContents = () => {
   const [errorMessage, setErrorMessage] = useState('');

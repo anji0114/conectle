@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import type { TUserUpdateFormData } from '@//app/setting/constants/userUpdateForm';
 import { userUpdateSchema } from '@//app/setting/constants/userUpdateForm';
-import { InputSection } from '@/app/(auth)/components/InputSection';
+import { InputSection } from '@/app/(auth)/_components/InputSection';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input/Input';
 

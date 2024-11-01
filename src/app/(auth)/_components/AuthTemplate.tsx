@@ -1,9 +1,9 @@
 import type { FC } from 'react';
-import { InputSection } from '@/app/(auth)/components/InputSection';
+import { InputSection } from '@/app/(auth)/_components/InputSection';
 import type {
   TLoginForm,
   TRegisterForm,
-} from '@/app/(auth)/constants/authSchema';
+} from '@/app/(auth)/_constants/authSchema';
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
