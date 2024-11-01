@@ -38,7 +38,7 @@ export const Modal: FC<TModalProps> = ({
             {title && (
               <Dialog.Title
                 className={twMerge(
-                  'font-bold text-xl leading-none',
+                  'text-xl font-bold leading-none',
                   classes?.title,
                 )}
               >

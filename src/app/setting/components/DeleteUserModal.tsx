@@ -29,7 +29,7 @@ export const DeleteUserModal: FC<TDeleteUserModalProps> = ({
   return (
     <Modal open={open} onCancel={onCancel} maxWidth='540px'>
       <div className='space-y-4'>
-        <DialogTitle className='text-danger text-xl font-bold leading-none'>
+        <DialogTitle className='text-xl font-bold leading-none'>
           ユザーの削除
         </DialogTitle>
 
@@ -40,12 +40,8 @@ export const DeleteUserModal: FC<TDeleteUserModalProps> = ({
         </p>
       </div>
       <div className='mx-[-40px] mb-[-20px] mt-10 flex justify-end gap-4 border-t border-gray-400 px-10 pt-5'>
-        <Button buttonSize='sm' buttonType='dark' onClick={onCancel}>
-          キャンセル
-        </Button>
-        <Button buttonSize='sm' buttonType='grayRed' onClick={onDeleteUser}>
-          削除する
-        </Button>
+        <Button onClick={onCancel}>キャンセル</Button>
+        <Button onClick={onDeleteUser}>削除する</Button>
       </div>
     </Modal>
   );

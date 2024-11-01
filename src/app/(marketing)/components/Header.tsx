@@ -3,7 +3,7 @@ import { SimpleButton } from '@/components/ui/Button/SimpleButton';
 
 export const Header = () => {
   return (
-    <header className='border-b border-base-200 px-10'>
+    <header className='border-b border-gray-200 px-10'>
       <div className='flex h-[72px] items-center justify-between'>
         <h1>
           <Link href='/' className='flex items-center gap-2'>

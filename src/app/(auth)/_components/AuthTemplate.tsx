@@ -4,7 +4,6 @@ import type {
   TLoginForm,
   TRegisterForm,
 } from '@/app/(auth)/_constants/authSchema';
-import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container/Container';
 import { Input } from '@/components/ui/Input/Input';
 import { SocialAuthButton } from './SocialAuthButton';
@@ -31,7 +30,6 @@ type TAuthTemplateProps = TLoginFormProps | TRegisterFormProps;
 export const AuthTemplate: FC<TAuthTemplateProps> = ({
   errorMessage,
   authType,
-  isValid,
   onSubmit,
   register,
 }) => {
@@ -74,16 +72,7 @@ export const AuthTemplate: FC<TAuthTemplateProps> = ({
                 />
               </InputSection>
 
-              <div className='text-center'>
-                <Button
-                  buttonType='dark'
-                  width='120px'
-                  type='submit'
-                  disabled={!isValid}
-                >
-                  ログイン
-                </Button>
-              </div>
+              <div className='text-center'></div>
               <div className='space-y-2'>
                 <SocialAuthButton socialType='google' authType={authType} />
                 <SocialAuthButton socialType='github' authType={authType} />
