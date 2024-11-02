@@ -24,7 +24,7 @@ export const Input = forwardRef<HTMLInputElement, TInputProps>(
     return (
       <input
         className={twMerge(
-          'px-3 rounded-lg outline-none w-full text-gray-800',
+          'w-full rounded-lg px-3 text-gray-800 outline-none',
           inputStyle.type[inputType],
           inputStyle.size[inputSize],
           className,

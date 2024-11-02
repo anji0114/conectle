@@ -47,12 +47,7 @@ export const UpdateUser: FC<TUpdateUserProps> = ({ username, full_name }) => {
             <Input inputType='fill' {...register('full_name')} />
           </InputSection>
           <div className='text-right'>
-            <Button
-              buttonType='blue'
-              width='120px'
-              disabled={!isValid}
-              onClick={handleSubmit(onSave)}
-            >
+            <Button disabled={!isValid} onClick={handleSubmit(onSave)}>
               保存する
             </Button>
           </div>

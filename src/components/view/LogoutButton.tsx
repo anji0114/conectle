@@ -14,9 +14,5 @@ export const LogoutButton = () => {
     router.push('/login');
   }, [supabase, router]);
 
-  return (
-    <Button buttonSize='sm' buttonType='plain' onClick={signOut}>
-      ログアウト
-    </Button>
-  );
+  return <Button onClick={signOut}>ログアウト</Button>;
 };

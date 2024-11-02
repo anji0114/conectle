@@ -20,13 +20,7 @@ export const DeleteUser: FC<TDeleteUserProps> = ({ id }) => {
           <p>このアクションはやり直すことができません。</p>
         </div>
         <div>
-          <Button
-            onClick={() => setOpen(true)}
-            buttonSize='sm'
-            buttonType='grayRed'
-          >
-            ユーザーを削除する
-          </Button>
+          <Button onClick={() => setOpen(true)}>ユーザーを削除する</Button>
         </div>
       </div>
       <DeleteUserModal id={id} open={open} onCancel={() => setOpen(false)} />

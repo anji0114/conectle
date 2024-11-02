@@ -19,7 +19,7 @@ export const SocialAuthButton: FC<TSocialAuthButtonProps> = ({
   return (
     <button
       className={twMerge(
-        'w-full flex items-center justify-center h-10 rounded gap-4',
+        'flex h-10 w-full items-center justify-center gap-4 rounded',
         buttonStyle[socialType],
       )}
     >
@@ -36,7 +36,7 @@ export const SocialAuthButton: FC<TSocialAuthButtonProps> = ({
         height={20}
         className='size-5'
       />
-      <span className='text-sm  font-bold'>
+      <span className='text-sm font-bold'>
         {socialType === 'google' && 'Google'}
         {socialType === 'github' && 'Github'}で
         {authType === 'login' && 'ログイン'}

@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import { SimpleButton } from '@/components/ui/Button/SimpleButton';
+import { buttonVariants } from '@/components/ui/Button';
 
 export const Header = () => {
   return (
-    <header className='border-b border-base-200 px-10'>
+    <header className='border-b border-gray-200 px-10'>
       <div className='flex h-[72px] items-center justify-between'>
         <h1>
           <Link href='/' className='flex items-center gap-2'>
@@ -11,17 +11,15 @@ export const Header = () => {
           </Link>
         </h1>
         <div className='flex gap-3'>
-          <SimpleButton
-            width='120px'
-            tag='link'
+          <Link
             href='/login'
-            buttonType='plain'
+            className={buttonVariants({ variant: 'outline' })}
           >
             ログイン
-          </SimpleButton>
-          <SimpleButton width='120px' tag='link' href='/login'>
+          </Link>
+          <Link href='/signup' className={buttonVariants()}>
             新規登録
-          </SimpleButton>
+          </Link>
         </div>
       </div>
     </header>
