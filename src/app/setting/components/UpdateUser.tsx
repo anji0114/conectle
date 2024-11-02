@@ -8,7 +8,7 @@ import type { TUserUpdateFormData } from '@//app/setting/constants/userUpdateFor
 import { userUpdateSchema } from '@//app/setting/constants/userUpdateForm';
 import { InputSection } from '@/app/(auth)/_components/InputSection';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input/Input';
+import { Input } from '@/components/ui/Input';
 
 type TUpdateUserProps = {
   username: string;
@@ -41,10 +41,10 @@ export const UpdateUser: FC<TUpdateUserProps> = ({ username, full_name }) => {
         <h2 className='text-xl font-bold'>ユーザー情報編集</h2>
         <div className='mt-10 space-y-10'>
           <InputSection label='ユーザーネーム' caution='半角英数字4文字以上'>
-            <Input inputType='fill' {...register('username')} />
+            <Input {...register('username')} />
           </InputSection>
           <InputSection label='名前'>
-            <Input inputType='fill' {...register('full_name')} />
+            <Input {...register('full_name')} />
           </InputSection>
           <div className='text-right'>
             <Button disabled={!isValid} onClick={handleSubmit(onSave)}>

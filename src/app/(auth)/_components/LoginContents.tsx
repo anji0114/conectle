@@ -3,7 +3,6 @@
 import { useCallback, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { AuthTemplate } from '@/app/(auth)/_components/AuthTemplate';
 import {
   type TLoginForm,
   loginSchema,
@@ -41,13 +40,5 @@ export const LoginContents = () => {
     [reset],
   );
 
-  return (
-    <AuthTemplate
-      errorMessage={errorMessage}
-      authType='login'
-      isValid={isValid}
-      onSubmit={handleSubmit(onSubmit)}
-      register={register}
-    />
-  );
+  return null;
 };
