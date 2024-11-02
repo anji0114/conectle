@@ -9,13 +9,13 @@ export const Login = () => {
       <div className='space-y-6'>
         <div>
           <p className='text-sm font-bold'>メールアドレス</p>
-          <div className='mt-2'>
+          <div className='mt-3'>
             <Input />
           </div>
         </div>
         <div>
           <p className='text-sm font-bold'>パスワード</p>
-          <div className='mt-2'>
+          <div className='mt-3'>
             <Input />
           </div>
         </div>

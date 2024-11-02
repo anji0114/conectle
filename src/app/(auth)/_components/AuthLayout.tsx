@@ -8,7 +8,7 @@ type Props = {
 
 export const AuthLayout: FC<Props> = ({ title, children }) => {
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center gap-6'>
+    <div className='flex min-h-screen flex-col items-center justify-center gap-6 p-10'>
       <div className='text-center'>
         <Link href='/' className='text-3xl font-semibold'>
           Conectle
