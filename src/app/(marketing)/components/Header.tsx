@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { SimpleButton } from '@/components/ui/Button/SimpleButton';
+import { buttonVariants } from '@/components/ui/Button';
 
 export const Header = () => {
   return (
@@ -11,17 +11,15 @@ export const Header = () => {
           </Link>
         </h1>
         <div className='flex gap-3'>
-          <SimpleButton
-            width='120px'
-            tag='link'
+          <Link
             href='/login'
-            buttonType='plain'
+            className={buttonVariants({ variant: 'outline' })}
           >
             ログイン
-          </SimpleButton>
-          <SimpleButton width='120px' tag='link' href='/login'>
+          </Link>
+          <Link href='/signup' className={buttonVariants()}>
             新規登録
-          </SimpleButton>
+          </Link>
         </div>
       </div>
     </header>

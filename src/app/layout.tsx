@@ -1,6 +1,5 @@
 import { Noto_Sans_JP } from 'next/font/google';
 import { type Metadata } from 'next';
-import { twMerge } from 'tailwind-merge';
 import '@/styles/globals.css';
 import { QueryProvider } from '@/components/providers/queryProvider';
 import { siteConfig } from '@/configs/site';
@@ -59,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja' suppressHydrationWarning={true}>
-      <body className={twMerge(notoSans.className, 'text-gray-900')}>
+      <body className={notoSans.className}>
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
