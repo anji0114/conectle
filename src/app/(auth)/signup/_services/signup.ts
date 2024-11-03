@@ -2,10 +2,10 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import type { TRegisterForm } from '@//app/(auth)/constants/authSchema';
+import { type SignupForm } from '@/app/(auth)/signup/_constants/signupForm';
 import { createClient } from '@/utils/supabase/server';
 
-export const register = async (value: TRegisterForm) => {
+export const signup = async (value: SignupForm) => {
   const supabase = createClient();
 
   const { data: existingUser, error: usernameError } = await supabase

@@ -14,17 +14,16 @@ type TDeleteUserModalProps = {
 };
 
 export const DeleteUserModal: FC<TDeleteUserModalProps> = ({
-  id,
   open,
   onCancel,
 }) => {
   const onDeleteUser = useCallback(async () => {
     try {
-      deleteUser(id);
+      deleteUser();
     } catch (error) {
       console.log(error);
     }
-  }, [id]);
+  }, []);
 
   return (
     <Modal open={open} onCancel={onCancel} maxWidth='540px'>
