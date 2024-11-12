@@ -19,6 +19,6 @@ export const login = async (value: LoginForm) => {
     throw new Error('メールまたはパスワードに誤りがあります');
   }
 
-  revalidatePath('/setting/user', 'layout');
-  redirect('/setting/user');
+  revalidatePath('/', 'layout');
+  redirect('/check-login');
 };
