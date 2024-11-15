@@ -12,6 +12,7 @@ import {
 import { login } from '@/app/(auth)/login/_services/login';
 import { Button, buttonVariants } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Login = () => {
   const [error, setError] = useState('');
@@ -28,10 +29,15 @@ export const Login = () => {
   });
 
   const onLogin = async (value: LoginForm) => {
+    setError('');
     try {
-      await login(value);
+      const response = await login(value);
+      if (response?.error) {
+        setError(response.error);
+      }
     } catch (error) {
-      setError((error as Error).message);
+      console.error(error);
+      setError(ERROR_MESSAGE.DEFAULT);
     }
   };
 

@@ -8,15 +8,13 @@ import { createClient } from '@/utils/supabase/server';
 export const login = async (value: LoginForm) => {
   const supabase = createClient();
 
-  const data = {
-    email: value.email,
-    password: value.password,
-  };
-
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signInWithPassword(value);
 
   if (error) {
-    throw new Error('メールまたはパスワードに誤りがあります');
+    if (error.message.includes('Invalid')) {
+      return { error: 'メールまたはパスワードに誤りがあります' };
+    }
+    return { error: error.message };
   }
 
   revalidatePath('/', 'layout');
