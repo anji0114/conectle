@@ -1,7 +1,6 @@
 import { Noto_Sans_JP } from 'next/font/google';
 import { type Metadata } from 'next';
 import '@/styles/globals.css';
-import { QueryProvider } from '@/components/providers/queryProvider';
 import { siteConfig } from '@/configs/site';
 import { rootUrl } from '@/configs/url';
 
@@ -58,9 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja' suppressHydrationWarning={true}>
-      <body className={notoSans.className}>
-        <QueryProvider>{children}</QueryProvider>
-      </body>
+      <body className={notoSans.className}>{children}</body>
     </html>
   );
 }
