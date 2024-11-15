@@ -1,12 +1,12 @@
-import { LoginContents } from '@/app/(auth)/_components/LoginContents';
-import type { Metadata } from 'next';
+import { type Metadata } from 'next';
+import { Login } from '@/app/(auth)/login/_components/Login';
 
 export const metadata: Metadata = {
   title: 'ログイン',
 };
 
 const LoginPage = () => {
-  return <LoginContents />;
+  return <Login />;
 };
 
 export default LoginPage;

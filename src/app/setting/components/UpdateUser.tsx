@@ -6,9 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import type { TUserUpdateFormData } from '@//app/setting/constants/userUpdateForm';
 import { userUpdateSchema } from '@//app/setting/constants/userUpdateForm';
-import { InputSection } from '@/app/(auth)/_components/InputSection';
 import { Button } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input/Input';
+import { Input } from '@/components/ui/Input';
 
 type TUpdateUserProps = {
   username: string;
@@ -40,12 +39,8 @@ export const UpdateUser: FC<TUpdateUserProps> = ({ username, full_name }) => {
       <div>
         <h2 className='text-xl font-bold'>ユーザー情報編集</h2>
         <div className='mt-10 space-y-10'>
-          <InputSection label='ユーザーネーム' caution='半角英数字4文字以上'>
-            <Input inputType='fill' {...register('username')} />
-          </InputSection>
-          <InputSection label='名前'>
-            <Input inputType='fill' {...register('full_name')} />
-          </InputSection>
+          <Input {...register('username')} />
+          <Input {...register('full_name')} />
           <div className='text-right'>
             <Button disabled={!isValid} onClick={handleSubmit(onSave)}>
               保存する

@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["conectle", "signup", "supabase", "tailwindcss"]
+  "cSpell.words": ["conectle", "signup", "supabase", "tailwindcss"],
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
