@@ -13,6 +13,7 @@ import {
 import { signup } from '@/app/(auth)/signup/_services/signup';
 import { Button, buttonVariants } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
+import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Signup = () => {
   const {
@@ -25,10 +26,15 @@ export const Signup = () => {
   const [error, setError] = useState<string>('');
 
   const onSignup = async (value: SignupForm) => {
+    setError('');
     try {
-      await signup(value);
+      const response = await signup(value);
+      if (response?.error) {
+        setError(response.error);
+      }
     } catch (error) {
-      setError((error as Error).message);
+      console.error(error);
+      setError(ERROR_MESSAGE.DEFAULT);
     }
   };
 
