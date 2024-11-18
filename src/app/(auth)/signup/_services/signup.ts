@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { type SignupForm } from '@/app/(auth)/signup/_constants/signupForm';
-import { rootUrl } from '@/configs/url';
+import { rootUrl } from '@/constants/url';
 import { createClient } from '@/utils/supabase/server';
 
 export const signup = async (value: SignupForm) => {
@@ -23,7 +23,7 @@ export const signup = async (value: SignupForm) => {
     email: value.email,
     password: value.password,
     options: {
-      emailRedirectTo: `${rootUrl}/welcome`,
+      emailRedirectTo: `${rootUrl}/signup/welcome`,
     },
   });
 
@@ -47,5 +47,5 @@ export const signup = async (value: SignupForm) => {
     .eq('id', data.user.id);
 
   revalidatePath('/', 'layout');
-  redirect('/complete');
+  redirect('/signup/complete');
 };

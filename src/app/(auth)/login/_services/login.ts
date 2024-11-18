@@ -18,5 +18,5 @@ export const login = async (value: LoginForm) => {
   }
 
   revalidatePath('/', 'layout');
-  redirect('/check-login');
+  redirect('/dashboard');
 };

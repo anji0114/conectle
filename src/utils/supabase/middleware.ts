@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
-import { EXCLUDE_AUTH_PATHS } from '@/configs/excludeAuthPaths';
+import { EXCLUDE_AUTH_PATHS } from '@/constants/excludeAuthPaths';
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
