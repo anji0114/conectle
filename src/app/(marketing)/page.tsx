@@ -1,6 +1,3 @@
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/Button';
-
 const TopPage = () => {
   return (
     <div>
@@ -8,25 +5,7 @@ const TopPage = () => {
         <h1 className='text-3xl font-bold leading-tight text-primary'>
           誰かの個人開発にジョインする
         </h1>
-        <div className='flex justify-center gap-2'>
-          <Link
-            href='/login'
-            className={buttonVariants({
-              variant: 'outline',
-              size: 'lg',
-              className: 'w-[140px]',
-            })}
-          >
-            ログイン
-          </Link>
-
-          <Link
-            href='/signup'
-            className={buttonVariants({ size: 'lg', className: 'w-[140px]' })}
-          >
-            新規登録
-          </Link>
-        </div>
+        <div className='flex justify-center gap-2'></div>
       </div>
     </div>
   );
