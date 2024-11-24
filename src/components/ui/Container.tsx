@@ -1,8 +1,9 @@
 import type { FC, PropsWithChildren } from 'react';
 import { cn } from '@/libs/cn';
+import type { SizeProps } from '@/types/sizeProps';
 
 type TContainerProps = {
-  maxWidth?: `${number}px` | `${number}%` | `${number}vw` | 'auto';
+  maxWidth?: SizeProps;
   className?: string;
 } & PropsWithChildren;
 
