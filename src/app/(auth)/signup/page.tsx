@@ -8,7 +8,7 @@ const SignupPage = async () => {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (user) return redirect('/');
+  if (user) return redirect('/dashboard');
   return <Signup />;
 };
 
