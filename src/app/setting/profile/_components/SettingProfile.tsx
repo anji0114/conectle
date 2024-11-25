@@ -35,12 +35,12 @@ export const SettingProfile = () => {
   });
 
   const onSubmit = async (data: ProfileForm) => {
-    if (!profile?.username) return;
+    if (!profile) return;
 
     setError('');
     setIsLoading(true);
     try {
-      const res = await updateProfile(data, profile.username);
+      const res = await updateProfile(data, profile.username || '');
       if (res.error) {
         setError(res.error);
         return;

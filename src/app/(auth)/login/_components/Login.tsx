@@ -53,7 +53,7 @@ export const Login = () => {
         <div>
           <p className='text-sm font-bold'>パスワード</p>
           <div className='mt-3'>
-            <Input {...register('password')} />
+            <Input {...register('password')} type='password' />
           </div>
         </div>
         <div>

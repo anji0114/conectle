@@ -19,10 +19,13 @@ export const signup = async (value: SignupForm) => {
     return { error: '既に使用済みのユーザーネームです' };
   }
 
-  const { data, error } = await supabase.auth.signUp({
+  const { error } = await supabase.auth.signUp({
     email: value.email,
     password: value.password,
     options: {
+      data: {
+        username: value.username,
+      },
       emailRedirectTo: `${rootUrl}/signup/welcome`,
     },
   });
@@ -35,19 +38,6 @@ export const signup = async (value: SignupForm) => {
       return { error: '既に使用済みのメールアドレスです' };
     }
     return { error: error.message };
-  }
-
-  if (!data.user) {
-    return { error: 'ユーザーが見つかりません' };
-  }
-
-  const { error: updateError } = await supabase
-    .from('profiles')
-    .update({ username: value.username })
-    .eq('id', data.user.id);
-
-  if (updateError) {
-    return { error: updateError.message };
   }
 
   revalidatePath('/', 'layout');
