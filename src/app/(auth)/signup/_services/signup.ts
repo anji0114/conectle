@@ -41,10 +41,14 @@ export const signup = async (value: SignupForm) => {
     return { error: 'ユーザーが見つかりません' };
   }
 
-  await supabase
+  const { error: updateError } = await supabase
     .from('profiles')
     .update({ username: value.username })
     .eq('id', data.user.id);
+
+  if (updateError) {
+    return { error: updateError.message };
+  }
 
   revalidatePath('/', 'layout');
   redirect('/signup/complete');
