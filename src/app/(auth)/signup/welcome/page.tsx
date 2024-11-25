@@ -3,7 +3,7 @@ import { buttonVariants } from '@/components/ui/Button';
 
 const SignupWelcomePage = () => {
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center gap-6'>
+    <div className='flex min-h-[calc(100vh_-_73px)] flex-col items-center justify-center gap-6'>
       <h1 className='text-2xl font-bold'>
         Conectleにご登録いただきありがとうございます！
       </h1>
