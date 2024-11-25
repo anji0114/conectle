@@ -9,9 +9,9 @@ export const Provider: FC<{ children: ReactNode }> = ({ children }) => {
     <SWRConfig
       value={{
         fetcher,
-        onError: (error) => {
-          console.log(error);
-        },
+        refreshInterval: 300000,
+        shouldRetryOnError: false,
+        revalidateOnFocus: false,
       }}
     >
       {children}

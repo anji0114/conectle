@@ -8,15 +8,9 @@ const SignupWelcomePage = () => {
         Conectleにご登録いただきありがとうございます！
       </h1>
       <p>世界中の個人開発者と繋がり、共に成長していきましょう。</p>
-      <div className='flex gap-4'>
-        <Link
-          className={buttonVariants({ variant: 'outline' })}
-          href='/document'
-        >
-          使い方を見る
-        </Link>
-        <Link className={buttonVariants()} href='/profile'>
-          今すぐ始める
+      <div className=''>
+        <Link className={buttonVariants()} href='/login'>
+          ログインする
         </Link>
       </div>
     </div>
