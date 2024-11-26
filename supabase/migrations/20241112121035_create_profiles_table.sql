@@ -21,8 +21,8 @@ language plpgsql
 security definer set search_path = ''
 as $$
 begin
-  insert into public.profiles (id, username)
-  values (new.id, new.raw_user_meta_data->>'username');
+  insert into public.profiles (id)
+  values (new.id);
   return new;
 end;
 $$;

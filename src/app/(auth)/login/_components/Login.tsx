@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -15,7 +16,10 @@ import { Input } from '@/components/ui/Input';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Login = () => {
+  const searchParams = useSearchParams();
+  const signup = searchParams.get('signup');
   const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     formState: { isValid },
@@ -31,6 +35,7 @@ export const Login = () => {
   const onLogin = async (value: LoginForm) => {
     setError('');
     try {
+      setIsLoading(true);
       const response = await login(value);
       if (response?.error) {
         setError(response.error);
@@ -38,11 +43,18 @@ export const Login = () => {
     } catch (error) {
       console.error(error);
       setError(ERROR_MESSAGE.DEFAULT);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <AuthLayout title='ログイン' error={error}>
+      {signup && (
+        <p className='mb-10 rounded-sm border border-green-500 bg-green-50 p-2 text-center text-sm text-green-500'>
+          メールアドレスの認証が完了しました
+        </p>
+      )}
       <form onSubmit={handleSubmit(onLogin)} className='space-y-6'>
         <div>
           <p className='text-sm font-bold'>メールアドレス</p>
@@ -57,8 +69,12 @@ export const Login = () => {
           </div>
         </div>
         <div>
-          <Button disabled={!isValid} className='w-full' type='submit'>
-            ログイン
+          <Button
+            disabled={!isValid || isLoading}
+            className='w-full'
+            type='submit'
+          >
+            {isLoading ? 'ログイン中...' : 'ログイン'}
           </Button>
         </div>
         <div className='text-center'>

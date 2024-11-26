@@ -16,6 +16,7 @@ import { Input } from '@/components/ui/Input';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Signup = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const {
     register,
     formState: { isValid },
@@ -28,6 +29,7 @@ export const Signup = () => {
   const onSignup = async (value: SignupForm) => {
     setError('');
     try {
+      setIsLoading(true);
       const response = await signup(value);
       if (response?.error) {
         setError(response.error);
@@ -35,19 +37,14 @@ export const Signup = () => {
     } catch (error) {
       console.error(error);
       setError(ERROR_MESSAGE.DEFAULT);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <AuthLayout title='新規登録' error={error}>
       <form onSubmit={handleSubmit(onSignup)} className='space-y-6'>
-        <div>
-          <p className='text-sm font-bold'>ユーザーネーム</p>
-          <p className='text-xs'>半角英数字</p>
-          <div className='mt-3'>
-            <Input {...register('username')} />
-          </div>
-        </div>
         <div>
           <p className='text-sm font-bold'>メールアドレス</p>
           <div className='mt-3'>
@@ -82,8 +79,12 @@ export const Signup = () => {
             に同意したとみなします
           </p>
           <div>
-            <Button className='w-full' disabled={!isValid} type='submit'>
-              新規登録
+            <Button
+              className='w-full'
+              disabled={!isValid || isLoading}
+              type='submit'
+            >
+              {isLoading ? '新規登録中...' : '新規登録'}
             </Button>
           </div>
           <div className='text-center'>

@@ -1,18 +1,10 @@
-import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/Button';
-
 const SignupWelcomePage = () => {
   return (
     <div className='flex min-h-[calc(100vh_-_73px)] flex-col items-center justify-center gap-6'>
       <h1 className='text-2xl font-bold'>
         Conectleにご登録いただきありがとうございます！
       </h1>
-      <p>世界中の個人開発者と繋がり、共に成長していきましょう。</p>
-      <div className=''>
-        <Link className={buttonVariants()} href='/login'>
-          ログインする
-        </Link>
-      </div>
+      <p>ご登録いただきましたメールアドレスに認証メールを送信しました。</p>
     </div>
   );
 };

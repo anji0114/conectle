@@ -3,12 +3,16 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { type LoginForm } from '@/app/(auth)/login/_constants/loginForm';
+import { ERROR_MESSAGE } from '@/constants/errorMessage';
 import { createClient } from '@/utils/supabase/server';
 
 export const login = async (value: LoginForm) => {
   const supabase = createClient();
 
-  const { error } = await supabase.auth.signInWithPassword(value);
+  const {
+    error,
+    data: { user },
+  } = await supabase.auth.signInWithPassword(value);
 
   if (error) {
     if (error.message.includes('Invalid')) {
@@ -17,6 +21,25 @@ export const login = async (value: LoginForm) => {
     return { error: error.message };
   }
 
+  if (!user) {
+    return { error: 'ユーザーが見つかりませんでした。' };
+  }
+
+  const { data: profile, error: profileError } = await supabase
+    .from('profiles')
+    .select('*')
+    .eq('id', user.id)
+    .single();
+
+  if (profileError || !profile) {
+    return { error: profileError?.message || ERROR_MESSAGE.DEFAULT };
+  }
+
   revalidatePath('/', 'layout');
+
+  if (!profile.username) {
+    redirect('/signup/init');
+  }
+
   redirect('/dashboard');
 };
