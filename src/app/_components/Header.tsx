@@ -11,9 +11,9 @@ export const Header = async () => {
   } = await supabase.auth.getUser();
 
   return (
-    <header className='border-b border-gray-200 px-10'>
+    <header className='border-b border-slate-200 px-10'>
       <div className='flex h-16 items-center justify-between'>
-        <h1>
+        <h1 className='text-slate-800'>
           <Link href='/' className='flex items-center gap-1'>
             <CodeBracketSquareIcon className='size-8' />
             <span className='pb-px text-xl font-bold leading-none'>

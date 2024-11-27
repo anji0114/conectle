@@ -59,7 +59,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja' suppressHydrationWarning={true}>
-      <body className={notoSans.className}>
+      <body className={`${notoSans.className} text-slate-900`}>
         <Provider>
           <Header />
           {children}

@@ -29,7 +29,7 @@ export const Loading: FC<Props> = ({ type = 'default', className }) => {
       <span className='absolute left-1/2 top-1/2 block size-6 -translate-x-1/2 -translate-y-1/2'>
         <span
           className={cn(
-            'block size-6 animate-spin rounded-full border-4 border-blue-500 border-t-transparent',
+            'block size-6 animate-spin rounded-full border-[3px] border-cyan-700 border-t-transparent',
           )}
         />
       </span>

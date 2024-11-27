@@ -1,20 +1,24 @@
 import Link from 'next/link';
-import { CodeBracketIcon } from '@heroicons/react/16/solid';
-import { buttonVariants } from '@/components/ui/old/Button';
+import {
+  UserGroupIcon,
+  ChatBubbleLeftRightIcon,
+  CodeBracketIcon,
+} from '@heroicons/react/24/outline';
 import { Container } from '@/components/ui/Container';
+import { buttonVariants } from '@/components/ui/old/Button';
 
 const TopPage = () => {
   return (
     <div>
       <div className='flex flex-col items-center justify-center gap-5 px-10 py-24'>
-        <h1 className='text-center text-3xl font-bold leading-normal text-primary lg:text-5xl lg:leading-normal'>
+        <h1 className='text-center text-3xl font-bold leading-normal lg:text-5xl lg:leading-normal'>
           個人開発者のための
           <br />
-          <span className='bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent'>
+          <span className='bg-gradient-to-r from-sky-700 to-sky-500 bg-clip-text text-transparent'>
             コミュニティプラットフォーム
           </span>
         </h1>
-        <p className='text-center text-xl leading-normal text-foreground/70'>
+        <p className='text-center text-xl leading-normal text-slate-700'>
           コードレビュー、プロジェクト参加、技術的な議論。
           <br />
           開発者同士が繋がり、共に成長できる場所です。
@@ -32,7 +36,7 @@ const TopPage = () => {
           <Link
             href='/signup'
             className={buttonVariants({
-              className: 'w-[140px]',
+              className: 'w-[140px] bg-sky-600',
             })}
           >
             無料で始める
@@ -45,22 +49,28 @@ const TopPage = () => {
           <div className='flex gap-8'>
             <div className='flex-1 rounded-lg border p-6'>
               <div className='flex items-center gap-3'>
-                <CodeBracketIcon className='size-10 text-blue-500' />
+                <CodeBracketIcon className='size-10 text-sky-600' />
                 <h3 className='text-xl font-bold'>コードレビュー</h3>
               </div>
-              <p className='mt-3 text-sm text-foreground/70'>
+              <p className='mt-3 text-sm text-slate-700'>
                 経験豊富な開発者からフィードバックを得て、コードの品質を向上させましょう
               </p>
             </div>
             <div className='flex-1 rounded-lg border p-6'>
-              <h3 className='text-lg font-bold'>プロジェクト</h3>
-              <p className='mt-3 text-sm text-foreground/70'>
+              <div className='flex items-center gap-3'>
+                <UserGroupIcon className='size-10 text-sky-600' />
+                <h3 className='text-lg font-bold'>プロジェクト</h3>
+              </div>
+              <p className='mt-3 text-sm text-slate-700'>
                 興味のあるプロジェクトに参加し、実践的な開発経験を積むことができます
               </p>
             </div>
             <div className='flex-1 rounded-lg border p-6'>
-              <h3 className='text-lg font-bold'>技術的な議論</h3>
-              <p className='mt-3 text-sm text-foreground/70'>
+              <div className='flex items-center gap-3'>
+                <ChatBubbleLeftRightIcon className='size-10 text-sky-600' />
+                <h3 className='text-xl font-bold'>技術的な議論</h3>
+              </div>
+              <p className='mt-3 text-sm text-slate-700'>
                 開発者同士で技術的な議論を交わし、知見を深めることができます
               </p>
             </div>

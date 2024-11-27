@@ -73,7 +73,7 @@ export const SettingProfile = () => {
     <div>
       <div className='space-y-6'>
         {error && (
-          <p className='border border-destructive p-2 text-center text-sm font-bold text-destructive'>
+          <p className='border-destructive text-destructive border p-2 text-center text-sm font-bold'>
             {error}
           </p>
         )}
