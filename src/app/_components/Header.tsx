@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { CodeBracketSquareIcon } from '@heroicons/react/16/solid';
-import { buttonVariants } from '@/components/ui/Button';
-import { cn } from '@/libs/cn';
+import { HeaderLoginContents } from '@/app/_components/HeaderLoginContents';
+import { HeaderLogoutContents } from '@/app/_components/HeaderLogoutContents';
 import { createClient } from '@/utils/supabase/server';
 
 export const Header = async () => {
@@ -12,7 +12,7 @@ export const Header = async () => {
 
   return (
     <header className='border-b border-gray-200 px-10'>
-      <div className='flex h-[72px] items-center justify-between'>
+      <div className='flex h-16 items-center justify-between'>
         <h1>
           <Link href='/' className='flex items-center gap-1'>
             <CodeBracketSquareIcon className='size-8' />
@@ -21,30 +21,8 @@ export const Header = async () => {
             </span>
           </Link>
         </h1>
-        <div className='flex gap-3'>
-          {!user ? (
-            <>
-              <Link
-                href='/login'
-                className={buttonVariants({ variant: 'outline', size: 'sm' })}
-              >
-                ログイン
-              </Link>
-              <Link href='/signup' className={buttonVariants({ size: 'sm' })}>
-                新規登録
-              </Link>
-            </>
-          ) : (
-            <Link
-              href='/dashboard'
-              className={cn(
-                buttonVariants({ size: 'sm' }),
-                'w-[140px] text-xs',
-              )}
-            >
-              ダッシュボードへ
-            </Link>
-          )}
+        <div className='ml-auto'>
+          {!user ? <HeaderLogoutContents /> : <HeaderLoginContents />}
         </div>
       </div>
     </header>
