@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CodeBracketIcon } from '@heroicons/react/16/solid';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/old/Button';
 import { Container } from '@/components/ui/Container';
 
 const TopPage = () => {

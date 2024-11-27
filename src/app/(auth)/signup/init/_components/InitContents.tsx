@@ -9,10 +9,10 @@ import {
   initProfileFormSchema,
   type InitProfileForm,
 } from '@/app/(auth)/signup/init/constants/initProfileForm';
-import { Alert } from '@/components/ui/Aleart';
-import { Button } from '@/components/ui/Button';
+import { Alert } from '@/components/ui/Alert';
 import { Container } from '@/components/ui/Container';
-import { Input } from '@/components/ui/Input';
+import { Button } from '@/components/ui/old/Button';
+import { Input } from '@/components/ui/old/Input';
 import { FormRow } from '@/components/view/FormRow';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 import { rootUrl } from '@/constants/url';

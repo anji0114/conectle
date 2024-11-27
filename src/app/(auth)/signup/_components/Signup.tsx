@@ -11,8 +11,8 @@ import {
   signupFormSchema,
 } from '@/app/(auth)/signup/_constants/signupForm';
 import { signup } from '@/app/(auth)/signup/_services/signup';
-import { Button, buttonVariants } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
+import { Button, buttonVariants } from '@/components/ui/old/Button';
+import { Input } from '@/components/ui/old/Input';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Signup = () => {

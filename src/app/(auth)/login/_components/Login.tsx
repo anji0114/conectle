@@ -11,8 +11,8 @@ import {
   loginFormSchema,
 } from '@/app/(auth)/login/_constants/loginForm';
 import { login } from '@/app/(auth)/login/_services/login';
-import { Button, buttonVariants } from '@/components/ui/Button';
-import { Input } from '@/components/ui/Input';
+import { Button, buttonVariants } from '@/components/ui/old/Button';
+import { Input } from '@/components/ui/old/Input';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Login = () => {

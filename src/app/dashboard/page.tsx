@@ -2,7 +2,7 @@
 
 import { DashboardCard } from '@/app/dashboard/_components/DashboardCard';
 import { AuthWrapper } from '@/components/functional/AuthWrapper';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/old/Button';
 import { Container } from '@/components/ui/Container';
 import { useLogout } from '@/hooks/useLogout';
 

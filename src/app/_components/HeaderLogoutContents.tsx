@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/old/Button';
 
 export const HeaderLogoutContents = () => {
   return (
