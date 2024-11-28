@@ -5,11 +5,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
 import { AuthLayout } from '@/app/(auth)/_components/AuthLayout';
+import { signup } from '@/app/(auth)/signup/_actions/signup';
 import {
   type SignupForm,
   signupFormSchema,
 } from '@/app/(auth)/signup/_constants/signupForm';
-import { signup } from '@/app/(auth)/signup/_services/signup';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { LinkText } from '@/components/ui/LinkText';

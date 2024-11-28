@@ -31,6 +31,12 @@ export const HeaderLoginContents = () => {
       </button>
       <div className='invisible absolute right-0 top-full w-[200px] rounded border border-slate-50 bg-white py-2 opacity-0 shadow transition-opacity duration-300 group-hover:visible group-hover:opacity-100'>
         <Link
+          href='/dashboard'
+          className='block w-full border-t px-4 py-2 text-left text-sm hover:bg-gray-50'
+        >
+          ダッシュボード
+        </Link>
+        <Link
           href='/setting/profile'
           className='block w-full border-t px-4 py-2 text-left text-sm hover:bg-gray-50'
         >

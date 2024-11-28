@@ -8,7 +8,6 @@ const SettingLayout = ({ children }: { children: ReactNode }) => {
     <AuthWrapper>
       <div className='pb-20 pt-12'>
         <Container maxWidth='880px'>
-          <h2 className='text-2xl font-bold'>設定</h2>
           <div className='mt-10 flex gap-12'>
             <div className='w-[240px]'>
               <SettingMenu />

@@ -18,10 +18,7 @@ export const signup = async (value: SignupForm) => {
   });
 
   if (error) {
-    if (
-      error.message.includes('already') &&
-      error.message.includes('registered')
-    ) {
+    if (error.code === 'user_already_exists') {
       return { error: '既に使用済みのメールアドレスです' };
     }
     return { error: error.message };

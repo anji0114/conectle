@@ -8,6 +8,7 @@ import {
   profileFormSchema,
   type ProfileForm,
 } from '@/app/setting/profile/_constants/profileForm';
+import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
@@ -71,17 +72,14 @@ export const SettingProfile = () => {
 
   return (
     <div>
-      <div className='space-y-6'>
-        {error && (
-          <p className='border-destructive text-destructive border p-2 text-center text-sm font-bold'>
-            {error}
-          </p>
-        )}
+      <h2 className='text-3xl font-bold text-slate-800'>プロフィール編集</h2>
+      <div className='mt-10 space-y-6'>
+        {error && <Alert type='error'>{error}</Alert>}
         <FormRow label='ユーザー名'>
           <Input {...register('username')} />
         </FormRow>
         <FormRow label='名前'>
-          <Input variant='fill' {...register('name')} />
+          <Input {...register('name')} />
         </FormRow>
         <FormRow label='紹介文'>
           <Textarea {...register('introduce')} />
