@@ -4,8 +4,8 @@ import {
   ChatBubbleLeftRightIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
+import { buttonStyle } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { buttonVariants } from '@/components/ui/old/Button';
 
 const TopPage = () => {
   return (
@@ -26,17 +26,17 @@ const TopPage = () => {
         <div className='flex justify-center gap-2'>
           <Link
             href='/login'
-            className={buttonVariants({
+            className={buttonStyle({
               variant: 'outline',
-              className: 'w-[140px]',
+              className: 'w-[120px]',
             })}
           >
             ログイン
           </Link>
           <Link
             href='/signup'
-            className={buttonVariants({
-              className: 'w-[140px] bg-sky-600',
+            className={buttonStyle({
+              className: 'w-[120px]',
             })}
           >
             無料で始める
@@ -47,7 +47,7 @@ const TopPage = () => {
       <div>
         <Container>
           <div className='flex gap-8'>
-            <div className='flex-1 rounded-lg border p-6'>
+            <div className='flex-1 rounded-lg border border-slate-200 p-6'>
               <div className='flex items-center gap-3'>
                 <CodeBracketIcon className='size-10 text-sky-600' />
                 <h3 className='text-xl font-bold'>コードレビュー</h3>
@@ -56,7 +56,7 @@ const TopPage = () => {
                 経験豊富な開発者からフィードバックを得て、コードの品質を向上させましょう
               </p>
             </div>
-            <div className='flex-1 rounded-lg border p-6'>
+            <div className='flex-1 rounded-lg border border-slate-200 p-6'>
               <div className='flex items-center gap-3'>
                 <UserGroupIcon className='size-10 text-sky-600' />
                 <h3 className='text-lg font-bold'>プロジェクト</h3>
@@ -65,7 +65,7 @@ const TopPage = () => {
                 興味のあるプロジェクトに参加し、実践的な開発経験を積むことができます
               </p>
             </div>
-            <div className='flex-1 rounded-lg border p-6'>
+            <div className='flex-1 rounded-lg border border-slate-200 p-6'>
               <div className='flex items-center gap-3'>
                 <ChatBubbleLeftRightIcon className='size-10 text-sky-600' />
                 <h3 className='text-xl font-bold'>技術的な議論</h3>

@@ -8,9 +8,9 @@ import {
   profileFormSchema,
   type ProfileForm,
 } from '@/app/setting/profile/_constants/profileForm';
-import { Button } from '@/components/ui/old/Button';
-import { Input } from '@/components/ui/old/Input';
-import { Textarea } from '@/components/ui/old/Textarea';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { Textarea } from '@/components/ui/Textarea';
 import { FormRow } from '@/components/view/FormRow';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 import { useProfile } from '@/hooks/useProfile';
@@ -81,7 +81,7 @@ export const SettingProfile = () => {
           <Input {...register('username')} />
         </FormRow>
         <FormRow label='名前'>
-          <Input {...register('name')} />
+          <Input variant='fill' {...register('name')} />
         </FormRow>
         <FormRow label='紹介文'>
           <Textarea {...register('introduce')} />

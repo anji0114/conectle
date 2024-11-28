@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -11,8 +10,9 @@ import {
   signupFormSchema,
 } from '@/app/(auth)/signup/_constants/signupForm';
 import { signup } from '@/app/(auth)/signup/_services/signup';
-import { Button, buttonVariants } from '@/components/ui/old/Button';
-import { Input } from '@/components/ui/old/Input';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { LinkText } from '@/components/ui/LinkText';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Signup = () => {
@@ -61,21 +61,13 @@ export const Signup = () => {
         <div className='space-y-4'>
           <p className='text-sm'>
             会員登録することで、
-            <Link
-              href='/terms'
-              target='_blank'
-              className='underline underline-offset-4 hover:opacity-90'
-            >
+            <LinkText href='/terms' target='_blank'>
               利用規約
-            </Link>
+            </LinkText>
             ・
-            <Link
-              href='/privacy'
-              target='_blank'
-              className='underline underline-offset-4 hover:opacity-90'
-            >
+            <LinkText href='/privacy' target='_blank'>
               プライバシーポリシー
-            </Link>
+            </LinkText>
             に同意したとみなします
           </p>
           <div>
@@ -88,9 +80,9 @@ export const Signup = () => {
             </Button>
           </div>
           <div className='text-center'>
-            <Link href='/login' className={buttonVariants({ variant: 'link' })}>
+            <LinkText href='/login'>
               既にアカウントをお持ちの方はこちら
-            </Link>
+            </LinkText>
           </div>
         </div>
       </form>

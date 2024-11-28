@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/old/Button';
+import { buttonStyle } from '@/components/ui/Button';
 
 const NotFoundPage = () => {
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center'>
+    <div className='flex min-h-[calc(100vh_-_65px)] flex-col items-center justify-center'>
       <h1 className='text-2xl font-bold'>404 Not Found</h1>
-      <p>
-        <Link href='/' className={buttonVariants({ variant: 'link' })}>
+      <div className='mt-4'>
+        <Link href='/' className={buttonStyle({ variant: 'outline' })}>
           トップページへ
         </Link>
-      </p>
+      </div>
     </div>
   );
 };

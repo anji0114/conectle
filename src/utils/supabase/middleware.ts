@@ -37,8 +37,7 @@ export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isExcludedPath =
-    pathname === '/' ||
-    EXCLUDE_AUTH_PATHS.some((path) => pathname.startsWith(path));
+    pathname === '/' || EXCLUDE_AUTH_PATHS.some((path) => pathname === path);
 
   if (!user && !isExcludedPath) {
     const url = request.nextUrl.clone();

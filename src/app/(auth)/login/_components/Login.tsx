@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -11,8 +10,9 @@ import {
   loginFormSchema,
 } from '@/app/(auth)/login/_constants/loginForm';
 import { login } from '@/app/(auth)/login/_services/login';
-import { Button, buttonVariants } from '@/components/ui/old/Button';
-import { Input } from '@/components/ui/old/Input';
+import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { LinkText } from '@/components/ui/LinkText';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 
 export const Login = () => {
@@ -78,9 +78,7 @@ export const Login = () => {
           </Button>
         </div>
         <div className='text-center'>
-          <Link href='/signup' className={buttonVariants({ variant: 'link' })}>
-            アカウントをお持ちでない方はこちら
-          </Link>
+          <LinkText href='/signup'>アカウントをお持ちでない方はこちら</LinkText>
         </div>
       </form>
     </AuthLayout>
