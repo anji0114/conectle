@@ -11,6 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       zIndex: {
+        toast: '10000',
         loading: '99999',
       },
     },

@@ -8,6 +8,7 @@ import {
   profileFormSchema,
   type ProfileForm,
 } from '@/app/setting/profile/_constants/profileForm';
+import { useToast } from '@/components/functional/ToastProvider';
 import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -20,6 +21,7 @@ export const SettingProfile = () => {
   const { data: profile, isLoading: profileLoading, mutate } = useProfile();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>('');
+  const { openToast } = useToast();
 
   const {
     register,
@@ -51,7 +53,10 @@ export const SettingProfile = () => {
         ...oldData,
         ...res.data,
       }));
-      alert('更新しました');
+      openToast({
+        type: 'success',
+        children: 'プロフィールを更新しました',
+      });
     } catch {
       setError(ERROR_MESSAGE.DEFAULT);
     } finally {

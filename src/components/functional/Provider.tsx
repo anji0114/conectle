@@ -2,6 +2,7 @@
 
 import type { FC, ReactNode } from 'react';
 import { SWRConfig } from 'swr';
+import { ToastProvider } from '@/components/functional/ToastProvider';
 import { fetcher } from '@/libs/api';
 
 export const Provider: FC<{ children: ReactNode }> = ({ children }) => {
@@ -14,7 +15,7 @@ export const Provider: FC<{ children: ReactNode }> = ({ children }) => {
         revalidateOnFocus: false,
       }}
     >
-      {children}
+      <ToastProvider>{children}</ToastProvider>
     </SWRConfig>
   );
 };
