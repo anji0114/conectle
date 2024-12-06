@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Dropdown } from '@/components/ui/Dropdown';
 import { Loading } from '@/components/ui/Loading';
 import { useLogout } from '@/hooks/useLogout';
 import { useProfile } from '@/hooks/useProfile';
@@ -26,10 +27,18 @@ export const HeaderLoginContents = () => {
 
   return (
     <div className='group relative'>
-      <button className='flex size-10 items-center justify-center rounded-full bg-slate-700 leading-none text-white'>
-        {profile.username[0].toUpperCase()}
-      </button>
-      <div className='invisible absolute right-0 top-full w-[200px] rounded border border-slate-50 bg-white py-2 opacity-0 shadow transition-opacity duration-300 group-hover:visible group-hover:opacity-100'>
+      <Dropdown
+        trigger={
+          <button className='flex size-10 items-center justify-center rounded-full bg-slate-700 leading-none text-white'>
+            {profile.username[0].toUpperCase()}
+          </button>
+        }
+        align='center'
+        side='bottom'
+        sideOffset={4}
+        collisionPadding={16}
+        className='w-[200px] py-2'
+      >
         <Link
           href='/dashboard'
           className='block w-full border-t px-4 py-2 text-left text-sm hover:bg-gray-50'
@@ -48,7 +57,7 @@ export const HeaderLoginContents = () => {
         >
           ログアウト
         </button>
-      </div>
+      </Dropdown>
     </div>
   );
 };
