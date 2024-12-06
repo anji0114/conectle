@@ -16,7 +16,7 @@ const DashboardPage = () => {
             text='プロフィールを充実させましょう！'
           />
           <DashboardCard
-            href='/project/new'
+            href='/projects/new'
             title='新規プロジェクトを作成する'
             text='新規プロジェクトを作成しましょう！'
           />

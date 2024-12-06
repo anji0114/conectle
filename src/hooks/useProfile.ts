@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import type { Profile } from '@/types/database/profile';
+import type { Profile } from '@/types/models/profile';
 
 export const useProfile = () => {
   return useSWR<Profile>('/profile');
