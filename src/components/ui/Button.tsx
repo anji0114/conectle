@@ -30,7 +30,7 @@ const buttonStyle = tv({
 type ButtonProps = VariantProps<typeof buttonStyle> & ComponentProps<'button'>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ size, variant, disabled, className, ...props }, ref) => {
+  ({ size = 'base', variant = 'base', disabled, className, ...props }, ref) => {
     return (
       <button
         className={buttonStyle({ size, variant, disabled, className })}
