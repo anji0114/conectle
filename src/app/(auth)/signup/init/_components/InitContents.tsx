@@ -86,7 +86,7 @@ export const InitContents = () => {
           </Alert>
         )}
         <div className='mt-10 space-y-6'>
-          <FormRow label='ユーザー名'>
+          <FormRow label='ユーザー名' caution='半角英数字4文字以上'>
             <div className='flex items-center gap-4'>
               <p className='text-sm'>{rootUrl}/</p>
               <Input placeholder='conectle' {...register('username')} />
