@@ -1,4 +1,4 @@
-import { DashboardCard } from '@/app/dashboard/_components/DashboardCard';
+import { DashboardCard } from '@/app/(dashboard)/_components/DashboardCard';
 import { AuthWrapper } from '@/components/functional/AuthWrapper';
 
 const DashboardPage = () => {

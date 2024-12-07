@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { updateProfile } from '@/app/setting/profile/_actions/updateProfile';
+import { updateProfile } from '@/app/(dashboard)/setting/profile/_actions/updateProfile';
 import {
   profileFormSchema,
   type ProfileForm,
-} from '@/app/setting/profile/_constants/profileForm';
+} from '@/app/(dashboard)/setting/profile/_constants/profileForm';
 import { useToast } from '@/components/functional/ToastProvider';
 import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
@@ -77,7 +77,9 @@ export const SettingProfile = () => {
 
   return (
     <div>
-      <h2 className='text-3xl font-bold text-slate-800'>プロフィール編集</h2>
+      <h2 className='border-b border-slate-200 pb-4 text-xl font-bold'>
+        プロフィール編集
+      </h2>
       <div className='mt-10 space-y-6'>
         {error && <Alert type='error'>{error}</Alert>}
         <FormRow label='ユーザー名'>

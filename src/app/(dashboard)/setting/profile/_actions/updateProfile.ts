@@ -1,6 +1,6 @@
 'use server';
 
-import { type ProfileForm } from '@/app/setting/profile/_constants/profileForm';
+import { type ProfileForm } from '@/app/(dashboard)/setting/profile/_constants/profileForm';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
 import { createClient } from '@/utils/supabase/server';
 

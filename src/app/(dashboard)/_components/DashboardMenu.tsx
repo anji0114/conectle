@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { FC, ReactNode } from 'react';
 import {
   ChatBubbleLeftRightIcon,
@@ -14,30 +17,32 @@ import {
 import { cn } from '@/libs/cn';
 
 export const DashboardMenu = () => {
+  const pathname = usePathname();
+
   return (
     <div className='w-[200px] space-y-2'>
-      <ul className='space-y-1 px-1'>
+      <ul className='space-y-1 px-1.5'>
         <MenuItem
           href='/dashboard'
           title='ダッシュボード'
           icon={<HomeIcon />}
-          isActive={true}
+          isActive={pathname === '/dashboard'}
         />
       </ul>
       <div className='border-t border-slate-200' />
-      <ul className='space-y-1 px-1'>
+      <ul className='space-y-1 px-1.5'>
         <MenuItem
           href='/dashboard/projects'
           title='プロジェクト管理'
           icon={<FireIcon />}
-          isActive={true}
+          isActive={pathname === '/dashboard/projects'}
         >
           <ul className='pl-2'>
             <MenuItem
               href='/projects/new'
               title='プロジェクト作成'
               icon={<FolderPlusIcon />}
-              isActive={true}
+              isActive={pathname === '/projects/new'}
               type='sub'
             />
           </ul>
@@ -47,14 +52,14 @@ export const DashboardMenu = () => {
           href='/dashboard/offers'
           title='募集管理'
           icon={<ClipboardDocumentListIcon />}
-          isActive={true}
+          isActive={pathname === '/dashboard/offers'}
         >
           <ul className='pl-2'>
             <MenuItem
               href='/offers/new'
               title='募集作成'
               icon={<FolderPlusIcon />}
-              isActive={true}
+              isActive={pathname === '/offers/new'}
               type='sub'
             />
           </ul>
@@ -63,34 +68,34 @@ export const DashboardMenu = () => {
           href='/dashboard/applications'
           title='応募管理'
           icon={<EnvelopeOpenIcon />}
-          isActive={true}
+          isActive={pathname === '/dashboard/applications'}
         />
         <MenuItem
           href='/dashboard/messages'
           title='メッセージ'
           icon={<ChatBubbleLeftRightIcon />}
-          isActive={true}
+          isActive={pathname === '/dashboard/messages'}
         />
       </ul>
       <div className='border-t border-slate-200' />
-      <ul className='space-y-1 px-1'>
+      <ul className='space-y-1 px-1.5'>
         <MenuItem
           href='/setting/profile'
           title='プロフィール編集'
           icon={<UserIcon />}
-          isActive={true}
+          isActive={pathname === '/setting/profile'}
         />
         <MenuItem
           href='/setting/mail'
           title='メール設定'
           icon={<EnvelopeIcon />}
-          isActive={true}
+          isActive={pathname === '/setting/mail'}
         />
         <MenuItem
           href='/setting/password'
           title='パスワード変更'
           icon={<LockClosedIcon />}
-          isActive={true}
+          isActive={pathname === '/setting/password'}
         />
       </ul>
       <div className='border-t border-slate-200' />
@@ -120,9 +125,9 @@ const MenuItem: FC<MenuItemProps> = ({
       <Link
         href={href}
         className={cn(
-          'flex items-center gap-2 rounded-md px-3 py-2',
+          'relative flex items-center gap-2 rounded-md px-3 py-2 before:absolute before:-left-1.5 before:top-0 before:h-full before:w-1 before:rounded-md before:bg-sky-600 before:opacity-0',
           type === 'main' ? 'hover:bg-slate-100' : 'hover:text-slate-500',
-          isActive && '',
+          isActive && 'bg-slate-100 before:opacity-100',
         )}
       >
         <span className='size-5 text-slate-700'>{icon}</span>
