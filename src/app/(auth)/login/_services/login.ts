@@ -4,10 +4,10 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { type LoginForm } from '@/app/(auth)/login/_constants/loginForm';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const login = async (value: LoginForm) => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
 
   const {
     error,

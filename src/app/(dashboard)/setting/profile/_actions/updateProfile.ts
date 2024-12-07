@@ -2,13 +2,13 @@
 
 import { type ProfileForm } from '@/app/(dashboard)/setting/profile/_constants/profileForm';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const updateProfile = async (
   profile: ProfileForm,
   currentUsername: string,
 ) => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
   const { data, error } = await supabase.auth.getUser();
 
   if (error || !data.user) {

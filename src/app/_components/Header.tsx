@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { CodeBracketSquareIcon } from '@heroicons/react/16/solid';
 import { HeaderLoginContents } from '@/app/_components/HeaderLoginContents';
 import { HeaderLogoutContents } from '@/app/_components/HeaderLogoutContents';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const Header = async () => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
   const {
     data: { user },
   } = await supabase.auth.getUser();

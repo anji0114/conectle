@@ -4,10 +4,10 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { type SignupForm } from '@/app/(auth)/signup/_constants/signupForm';
 import { rootUrl } from '@/constants/url';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const signup = async (value: SignupForm) => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
 
   const { error } = await supabase.auth.signUp({
     email: value.email,

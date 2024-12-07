@@ -2,10 +2,10 @@
 
 import { redirect } from 'next/navigation';
 import type { ProjectForm } from '@/types/schema/projectForm';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const createProject = async (formData: ProjectForm) => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
   const {
     data: { user },
   } = await supabase.auth.getUser();

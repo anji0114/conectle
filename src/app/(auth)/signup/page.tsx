@@ -1,9 +1,9 @@
 import { redirect } from 'next/navigation';
 import { Signup } from '@/app/(auth)/signup/_components/Signup';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 const SignupPage = async () => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
   const {
     data: { user },
   } = await supabase.auth.getUser();

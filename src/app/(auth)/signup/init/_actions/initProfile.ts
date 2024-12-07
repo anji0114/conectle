@@ -2,10 +2,10 @@
 
 import type { InitProfileForm } from '@/app/(auth)/signup/init/constants/initProfileForm';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
-import { createClient } from '@/utils/supabase/server';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const initProfile = async (formData: InitProfileForm) => {
-  const supabase = createClient();
+  const supabase = createSupabaseServer();
   const { data, error } = await supabase.auth.getUser();
 
   if (error || !data.user) {

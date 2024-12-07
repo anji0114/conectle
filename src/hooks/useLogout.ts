@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
-import { createClient } from '@/utils/supabase/client';
+import { createSupabaseClient } from '@/utils/supabase/client';
 
 export const useLogout = () => {
-  const supabase = createClient();
+  const supabase = createSupabaseClient();
 
   const logout = useCallback(
     async (url?: string) => {
