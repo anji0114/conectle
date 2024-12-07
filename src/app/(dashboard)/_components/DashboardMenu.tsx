@@ -125,12 +125,20 @@ const MenuItem: FC<MenuItemProps> = ({
       <Link
         href={href}
         className={cn(
-          'relative flex items-center gap-2 rounded-md px-3 py-2 before:absolute before:-left-1.5 before:top-0 before:h-full before:w-1 before:rounded-md before:bg-sky-600 before:opacity-0',
+          'group flex items-center gap-2 rounded-md px-3 py-2',
           type === 'main' ? 'hover:bg-slate-100' : 'hover:text-slate-500',
-          isActive && 'bg-slate-100 before:opacity-100',
+          isActive && 'bg-slate-100 text-sky-700',
         )}
       >
-        <span className='size-5 text-slate-700'>{icon}</span>
+        <span
+          className={cn(
+            'size-5 text-slate-700',
+            isActive && 'text-sky-700',
+            type === 'sub' && 'group-hover:text-slate-500',
+          )}
+        >
+          {icon}
+        </span>
         <span className='text-sm font-medium'>{title}</span>
       </Link>
       {children}
