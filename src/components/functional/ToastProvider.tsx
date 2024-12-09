@@ -54,7 +54,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
         <Toast
           isOpen={!!toast?.isOpen}
           title={toast?.title}
-          type={toast?.type}
+          variant={toast?.variant}
           duration={toast?.duration}
           className={toast?.className}
           onOpenChange={onOpenChange}

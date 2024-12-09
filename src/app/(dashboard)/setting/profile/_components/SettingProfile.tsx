@@ -54,7 +54,7 @@ export const SettingProfile = () => {
         ...res.data,
       }));
       openToast({
-        type: 'success',
+        variant: 'success',
         children: 'プロフィールを更新しました',
       });
     } catch {

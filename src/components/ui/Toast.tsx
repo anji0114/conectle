@@ -8,7 +8,7 @@ export type ToastProps = {
   title?: string;
   children: ReactNode;
   className?: string;
-  type?: 'success' | 'error';
+  variant?: 'success' | 'error';
   duration?: number;
   onOpenChange: (isOpen: boolean) => void;
 };
@@ -16,7 +16,7 @@ export type ToastProps = {
 const toastStyle = tv({
   base: 'fixed bottom-10 right-10 z-toast min-w-[300px] max-w-[calc(100vw_-_80px)] rounded-md border bg-white py-5 pl-6 pr-8 shadow-lg',
   variants: {
-    type: {
+    variant: {
       success: 'border-sky-200',
       error: 'border-red-200',
     },
@@ -26,7 +26,7 @@ const toastStyle = tv({
 export const Toast = ({
   isOpen,
   title,
-  type,
+  variant = 'success',
   duration = 5000,
   onOpenChange,
   children,
@@ -34,7 +34,7 @@ export const Toast = ({
 }: ToastProps) => {
   return (
     <RadixToast.Root
-      className={toastStyle({ type, className })}
+      className={toastStyle({ variant, className })}
       open={isOpen}
       onOpenChange={onOpenChange}
       duration={duration}
