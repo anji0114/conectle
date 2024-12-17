@@ -6,4 +6,4 @@ export const offerFormSchema = z.object({
   project_id: z.string().min(1, { message: 'プロジェクトは必須です' }),
 });
 
-export type OfferForm = z.infer<typeof offerFormSchema>;
+export type OfferFormType = z.infer<typeof offerFormSchema>;

@@ -4,23 +4,25 @@ import { revalidatePath } from 'next/cache';
 import type { OfferFormType } from '@/types/schema/offerForm';
 import { createSupabaseServer } from '@/utils/supabase/server';
 
-export const createOffer = async (formValue: OfferFormType) => {
+export const updateOffer = async (formData: OfferFormType, offerId: string) => {
   const supabase = createSupabaseServer();
-
-  const { error, data } = await supabase
+  const { data, error } = await supabase
     .from('offers')
-    .insert({
-      title: formValue.title,
-      contents: formValue.contents,
-      project_id: formValue.project_id,
-    })
+    .update(formData)
+    .eq('id', offerId)
     .select('*')
     .single();
 
   if (error) {
-    return { error: error.message };
+    return {
+      error: error.message,
+    };
   }
-  revalidatePath('/dashboard/offers');
 
-  return { data: data };
+  revalidatePath('/dashboard/offers');
+  revalidatePath(`/offers/${offerId}/edit`);
+
+  return {
+    data,
+  };
 };
