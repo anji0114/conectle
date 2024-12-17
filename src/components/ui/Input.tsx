@@ -10,6 +10,7 @@ const inputStyle = tv({
       fill: 'border border-slate-200 bg-slate-100',
     },
     size: {
+      sm: 'h-8 rounded px-3 text-sm',
       base: 'h-10 rounded px-3 text-sm ',
     },
   },
@@ -19,10 +20,11 @@ const inputStyle = tv({
   },
 });
 
-type Props = ComponentProps<'input'> & VariantProps<typeof inputStyle>;
+type Props = Omit<ComponentProps<'input'>, 'size'> &
+  VariantProps<typeof inputStyle>;
 
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ variant, size, className, ...props }, ref) => {
+  ({ variant = 'outline', size = 'base', className, ...props }, ref) => {
     return (
       <input
         className={inputStyle({ variant, size, className })}
