@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { DashboardHeading } from '@/app/(dashboard)/_components/DashboardHeading';
-
 import { Loading } from '@/components/ui/Loading';
-import { DashboardOffers } from '@/features/dashbaord/components/DashboardOffers';
+import { DashboardHeading } from '@/components/view/DashboardHeading';
+
+import { DashboardOffers } from '@/features/dashboard/components/DashboardOffers';
 
 const OffersPage = async () => {
   return (

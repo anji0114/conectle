@@ -1,6 +1,6 @@
-import { DashboardMenu } from '@/app/(dashboard)/_components/DashboardMenu';
 import { AuthWrapper } from '@/components/functional/AuthWrapper';
 import { Container } from '@/components/ui/Container';
+import { DashboardMenu } from '@/components/view/DashboardMenu';
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   return (

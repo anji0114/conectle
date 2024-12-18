@@ -1,4 +1,4 @@
-import { DashboardProjects } from '@/app/(dashboard)/dashboard/projects/_components/DashboardProjects';
+import { DashboardProjects } from '@/features/dashboard/components/DashboardProjects';
 
 const ProjectsPage = () => {
   return <DashboardProjects />;

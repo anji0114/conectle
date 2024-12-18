@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
-import { DashboardHeading } from '@/app/(dashboard)/_components/DashboardHeading';
-import { Projects } from '@/app/(dashboard)/dashboard/projects/_components/Projects';
 import { Loading } from '@/components/ui/Loading';
+import { DashboardHeading } from '@/components/view/DashboardHeading';
+import { DashboardProjectsList } from '@/features/dashboard/components/DashboardProjectsList';
 
 export const DashboardProjects = () => {
   return (
@@ -9,7 +9,7 @@ export const DashboardProjects = () => {
       <DashboardHeading>プロジェクト管理</DashboardHeading>
       <div className='mt-10'>
         <Suspense fallback={<Loading />}>
-          <Projects />
+          <DashboardProjectsList />
         </Suspense>
       </div>
     </div>

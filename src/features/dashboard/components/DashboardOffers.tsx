@@ -1,4 +1,4 @@
-import { DashboardOfferItem } from '@/features/dashbaord/components/DashboardOfferItem';
+import { DashboardOfferItem } from '@/features/dashboard/components/DashboardOfferItem';
 import { getUser } from '@/services/auth/getUser';
 import { createSupabaseServer } from '@/utils/supabase/server';
 
