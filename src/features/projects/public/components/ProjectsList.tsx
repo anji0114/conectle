@@ -1,11 +1,8 @@
-import { createSupabaseServer } from '@/utils/supabase/server'
-import React from 'react'
+import { createSupabaseServer } from '@/utils/supabase/server';
+import React from 'react';
 
-export const ProjectsList =  async() => {
+export const ProjectsList = async () => {
   const supabase = createSupabaseServer();
 
-  return (
-    <div>Projects</div>
-  )
-}
-
+  return <div>Projects</div>;
+};
