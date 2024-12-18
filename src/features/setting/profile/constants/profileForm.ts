@@ -8,6 +8,12 @@ export const profileFormSchema = z.object({
     .regex(REGEX.USERNAME),
   name: z.string().min(1, { message: '名前を入力してください' }),
   introduce: z.string(),
+  links: z.array(
+    z.object({
+      url: z.string().url(),
+      name: z.string(),
+    }),
+  ),
 });
 
 export type ProfileForm = z.infer<typeof profileFormSchema>;

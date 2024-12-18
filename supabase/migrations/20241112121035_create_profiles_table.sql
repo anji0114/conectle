@@ -1,8 +1,14 @@
+create type link as (
+  url text,
+  name text
+);
+
 create table profiles (
   id uuid primary key references auth.users on delete cascade,
   username text unique default null,
   name text,
   introduce text,
+  links link[] default '{}' not null,
   avatar_url text,
   created_at timestamp with time zone default now() not null,
   updated_at timestamp with time zone default now() not null

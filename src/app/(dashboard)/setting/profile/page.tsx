@@ -1,4 +1,4 @@
-import { SettingProfile } from '@/app/(dashboard)/setting/profile/_components/SettingProfile';
+import { SettingProfile } from '@/features/setting/profile/components/SettingProfile';
 
 const SettingProfilePage = () => {
   return <SettingProfile />;

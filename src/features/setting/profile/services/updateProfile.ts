@@ -1,13 +1,10 @@
 'use server';
 
-import { type ProfileForm } from '@/app/(dashboard)/setting/profile/_constants/profileForm';
 import { ERROR_MESSAGE } from '@/constants/errorMessage';
+import { type ProfileForm } from '@/features/setting/profile/constants/profileForm';
 import { createSupabaseServer } from '@/utils/supabase/server';
 
-export const updateProfile = async (
-  profile: ProfileForm,
-  currentUsername: string,
-) => {
+export const updateProfile = async (profile: ProfileForm) => {
   const supabase = createSupabaseServer();
   const { data, error } = await supabase.auth.getUser();
 
@@ -25,7 +22,7 @@ export const updateProfile = async (
     return { error: userError.message };
   }
 
-  if (userData && userData.username !== currentUsername) {
+  if (userData && userData.id !== data.user?.id) {
     return { error: '既に使用済みのユーザーネームです' };
   }
 
@@ -35,6 +32,7 @@ export const updateProfile = async (
       name: profile.name,
       introduce: profile.introduce,
       username: profile.username,
+      links: profile.links.filter((link) => link.url && link.name),
     })
     .eq('id', data.user?.id)
     .select('*')
