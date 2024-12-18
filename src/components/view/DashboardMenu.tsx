@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { FC, ReactNode } from 'react';
 import {
-  ChatBubbleLeftRightIcon,
   ClipboardDocumentListIcon,
   EnvelopeIcon,
   EnvelopeOpenIcon,
@@ -69,12 +68,6 @@ export const DashboardMenu = () => {
           title='応募管理'
           icon={<EnvelopeOpenIcon />}
           isActive={pathname === '/dashboard/applications'}
-        />
-        <MenuItem
-          href='/dashboard/messages'
-          title='メッセージ'
-          icon={<ChatBubbleLeftRightIcon />}
-          isActive={pathname === '/dashboard/messages'}
         />
       </ul>
       <div className='border-t border-slate-200' />
