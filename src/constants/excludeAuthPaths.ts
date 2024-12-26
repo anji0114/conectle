@@ -1,1 +1,6 @@
-export const EXCLUDE_AUTH_PATHS = ['/login', '/signup', '/signup/welcome'];
+export const EXCLUDE_AUTH_PATHS = [
+  '/login',
+  '/signup',
+  '/signup/welcome',
+  '/projects',
+];

@@ -1,20 +1,19 @@
 import { Suspense } from 'react';
 import { Loading } from '@/components/ui/Loading';
 import { DashboardHeading } from '@/components/view/DashboardHeading';
+import { DashboardListings } from '@/features/dashboard/components/DashboardListings';
 
-import { DashboardOffers } from '@/features/dashboard/components/DashboardOffers';
-
-const OffersPage = async () => {
+const ListingsPage = async () => {
   return (
     <div>
       <DashboardHeading>募集管理</DashboardHeading>
       <div className='mt-10'>
         <Suspense fallback={<Loading />}>
-          <DashboardOffers />
+          <DashboardListings />
         </Suspense>
       </div>
     </div>
   );
 };
 
-export default OffersPage;
+export default ListingsPage;

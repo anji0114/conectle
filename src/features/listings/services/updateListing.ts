@@ -1,15 +1,18 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import type { OfferFormType } from '@/types/schema/offerForm';
+import type { ListingFormType } from '@/types/schema/listingForm';
 import { createSupabaseServer } from '@/utils/supabase/server';
 
-export const updateOffer = async (formData: OfferFormType, offerId: string) => {
+export const updateListing = async (
+  formData: ListingFormType,
+  listingId: string,
+) => {
   const supabase = createSupabaseServer();
   const { data, error } = await supabase
-    .from('offers')
+    .from('listings')
     .update(formData)
-    .eq('id', offerId)
+    .eq('id', listingId)
     .select('*')
     .single();
 
@@ -19,8 +22,8 @@ export const updateOffer = async (formData: OfferFormType, offerId: string) => {
     };
   }
 
-  revalidatePath('/dashboard/offers');
-  revalidatePath(`/offers/${offerId}/edit`);
+  revalidatePath('/dashboard/listings');
+  revalidatePath(`/listings/${listingId}/edit`);
 
   return {
     data,

@@ -1,42 +1,49 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import type { FC } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useToast } from '@/components/functional/ToastProvider';
 import { Loading } from '@/components/ui/Loading';
-import { OfferForm } from '@/features/offers/components/OfferForm';
-import { createOffer } from '@/features/offers/services/createOffer';
+import { ListingForm } from '@/features/listings/components/ListingForm';
+import { createListing } from '@/features/listings/services/createListing';
 import { useProjectsMine } from '@/hooks/api/useProjectsMine';
-import { offerFormSchema, type OfferFormType } from '@/types/schema/offerForm';
+import {
+  listingFormSchema,
+  type ListingFormType,
+} from '@/types/schema/listingForm';
 
-export const OfferNewContents = () => {
+type Props = {
+  userId: string;
+};
+
+export const ListingNewContents: FC<Props> = ({ userId }) => {
   const router = useRouter();
   const { openToast } = useToast();
-  const formMethods = useForm<OfferFormType>({
-    resolver: zodResolver(offerFormSchema),
+  const formMethods = useForm<ListingFormType>({
+    resolver: zodResolver(listingFormSchema),
     defaultValues: {
       title: '',
       contents: '',
-      project_id: '',
+      project_id: null,
     },
   });
   const { data: projects, isLoading } = useProjectsMine();
 
-  const onSubmit = async (data: OfferFormType) => {
-    await createOffer(data);
+  const onSubmit = async (data: ListingFormType) => {
+    await createListing(data, userId);
     openToast({
       children: '募集を作成しました',
     });
-    router.push(`/dashboard/offers`);
+    router.push(`/dashboard/listings`);
   };
 
   if (isLoading || !projects) return <Loading type='absolute' />;
-  if (projects.length === 0) return <div>プロジェクトがありません</div>;
 
   return (
     <FormProvider {...formMethods}>
-      <OfferForm
+      <ListingForm
         projects={projects}
         disabled={formMethods.formState.isValid}
         isLoading={isLoading}

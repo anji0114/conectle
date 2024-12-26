@@ -6,7 +6,9 @@ export const ProjectsPageTemplate = () => {
     <div className='py-20'>
       <Container>
         <h1 className='text-2xl font-bold'>プロジェクト一覧</h1>
-        <ProjectsList />
+        <div className='mt-10'>
+          <ProjectsList />
+        </div>
       </Container>
     </div>
   );

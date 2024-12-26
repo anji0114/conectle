@@ -27,7 +27,7 @@ export const Header = async () => {
             <LinkText variant='bold' href='/projects'>
               プロジェクト
             </LinkText>
-            <LinkText variant='bold' href='/offers'>
+            <LinkText variant='bold' href='/listings'>
               募集
             </LinkText>
           </div>

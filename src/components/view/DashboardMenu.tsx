@@ -48,17 +48,17 @@ export const DashboardMenu = () => {
         </MenuItem>
 
         <MenuItem
-          href='/dashboard/offers'
+          href='/dashboard/listings'
           title='募集管理'
           icon={<ClipboardDocumentListIcon />}
-          isActive={pathname === '/dashboard/offers'}
+          isActive={pathname === '/dashboard/listings'}
         >
           <ul className='pl-2'>
             <MenuItem
-              href='/offers/new'
+              href='/listings/new'
               title='募集作成'
               icon={<FolderPlusIcon />}
-              isActive={pathname === '/offers/new'}
+              isActive={pathname === '/listings/new'}
               type='sub'
             />
           </ul>

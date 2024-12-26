@@ -34,80 +34,41 @@ export type Database = {
   };
   public: {
     Tables: {
-      messages: {
-        Row: {
-          content: string;
-          created_at: string;
-          from_user_id: string;
-          id: string;
-          read_at: string | null;
-          to_user_id: string;
-        };
-        Insert: {
-          content: string;
-          created_at?: string;
-          from_user_id: string;
-          id?: string;
-          read_at?: string | null;
-          to_user_id: string;
-        };
-        Update: {
-          content?: string;
-          created_at?: string;
-          from_user_id?: string;
-          id?: string;
-          read_at?: string | null;
-          to_user_id?: string;
-        };
-        Relationships: [
-          {
-            foreignKeyName: 'messages_from_user_id_fkey';
-            columns: ['from_user_id'];
-            isOneToOne: false;
-            referencedRelation: 'profiles';
-            referencedColumns: ['id'];
-          },
-          {
-            foreignKeyName: 'messages_to_user_id_fkey';
-            columns: ['to_user_id'];
-            isOneToOne: false;
-            referencedRelation: 'profiles';
-            referencedColumns: ['id'];
-          },
-        ];
-      };
-      offer_applications: {
+      listing_applications: {
         Row: {
           applied_at: string;
           id: string;
-          offer_id: string;
-          status: Database['public']['Enums']['offer_application_status'];
+          listing_id: string;
+          status: Database['public']['Enums']['listing_application_status'];
+          updated_at: string;
           user_id: string;
         };
         Insert: {
           applied_at?: string;
           id?: string;
-          offer_id: string;
-          status?: Database['public']['Enums']['offer_application_status'];
+          listing_id: string;
+          status?: Database['public']['Enums']['listing_application_status'];
+          updated_at?: string;
           user_id: string;
         };
         Update: {
           applied_at?: string;
           id?: string;
-          offer_id?: string;
-          status?: Database['public']['Enums']['offer_application_status'];
+          listing_id?: string;
+          status?: Database['public']['Enums']['listing_application_status'];
+          updated_at?: string;
           user_id?: string;
         };
         Relationships: [
           {
-            foreignKeyName: 'offer_applications_offer_id_fkey';
-            columns: ['offer_id'];
+            foreignKeyName: 'listing_applications_listing_id_fkey';
+            columns: ['listing_id'];
             isOneToOne: false;
-            referencedRelation: 'offers';
+            referencedRelation: 'listings';
             referencedColumns: ['id'];
           },
           {
-            foreignKeyName: 'offer_applications_user_id_fkey';
+            foreignKeyName: 'listing_applications_user_id_fkey';
             columns: ['user_id'];
             isOneToOne: false;
             referencedRelation: 'profiles';
@@ -115,40 +76,50 @@ export type Database = {
           },
         ];
       };
-      offers: {
+      listings: {
         Row: {
           contents: string;
           created_at: string;
           id: string;
-          project_id: string;
-          status: Database['public']['Enums']['offer_status'];
+          project_id: string | null;
+          status: Database['public']['Enums']['listing_status'];
           title: string;
           updated_at: string;
+          user_id: string;
         };
         Insert: {
           contents: string;
           created_at?: string;
           id?: string;
-          project_id: string;
-          status?: Database['public']['Enums']['offer_status'];
+          project_id?: string | null;
+          status?: Database['public']['Enums']['listing_status'];
           title: string;
           updated_at?: string;
+          user_id: string;
         };
         Update: {
           contents?: string;
           created_at?: string;
           id?: string;
-          project_id?: string;
-          status?: Database['public']['Enums']['offer_status'];
+          project_id?: string | null;
+          status?: Database['public']['Enums']['listing_status'];
           title?: string;
           updated_at?: string;
+          user_id?: string;
         };
         Relationships: [
           {
-            foreignKeyName: 'offers_project_id_fkey';
+            foreignKeyName: 'listings_project_id_fkey';
             columns: ['project_id'];
             isOneToOne: false;
             referencedRelation: 'projects';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'listings_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'profiles';
             referencedColumns: ['id'];
           },
         ];
@@ -261,8 +232,8 @@ export type Database = {
       [_ in never]: never;
     };
     Enums: {
-      offer_application_status: 'applied' | 'accepted' | 'rejected';
-      offer_status: 'draft' | 'published' | 'closed';
+      listing_application_status: 'applied' | 'accepted' | 'rejected';
+      listing_status: 'draft' | 'published' | 'closed';
       project_status: 'draft' | 'published' | 'closed';
     };
     CompositeTypes: {

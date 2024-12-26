@@ -1,9 +1,5 @@
-import Link from 'next/link';
-import { PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
-import { IconButton, iconButtonStyle } from '@/components/ui/IconButton';
-import { Tag } from '@/components/ui/Tag';
-import { createSupabaseServer } from '@/utils/supabase/server';
 import { DashboardProjectItem } from '@/features/dashboard/components/DashboardProjectItem';
+import { createSupabaseServer } from '@/utils/supabase/server';
 
 export const DashboardProjectsList = async () => {
   const supabase = createSupabaseServer();

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/Input';
 import { Select } from '@/components/ui/Select';
 import { Textarea } from '@/components/ui/Textarea';
 import type { Project } from '@/types/models/project';
-import type { OfferFormType } from '@/types/schema/offerForm';
+import type { ListingFormType } from '@/types/schema/listingForm';
 
 type Props = {
   projects: Project[];
@@ -15,14 +15,14 @@ type Props = {
   submitText: string;
 };
 
-export const OfferForm: FC<Props> = ({
+export const ListingForm: FC<Props> = ({
   projects,
   disabled,
   isLoading,
   onSubmit,
   submitText,
 }) => {
-  const { register } = useFormContext<OfferFormType>();
+  const { register } = useFormContext<ListingFormType>();
 
   return (
     <div className='flex gap-10'>

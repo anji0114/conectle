@@ -6,14 +6,14 @@ export const GET = async () => {
   const supabase = createSupabaseServer();
   const user = await getUser();
 
-  const { data: offers, error } = await supabase
-    .from('offers')
+  const { data: listings, error } = await supabase
+    .from('listings')
     .select('*, projects(*)')
     .eq('projects.user_id', user.id);
 
-  if (error || !offers) {
+  if (error || !listings) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  return NextResponse.json({ data: offers });
+  return NextResponse.json({ data: listings });
 };
