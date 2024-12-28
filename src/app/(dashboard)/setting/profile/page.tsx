@@ -1,7 +1,7 @@
-import { SettingProfile } from '@/features/setting/profile/components/SettingProfile';
+import { SettingProfileTemplate } from '@/features/setting/profile/components/SettingProfileTemplate';
 
 const SettingProfilePage = () => {
-  return <SettingProfile />;
+  return <SettingProfileTemplate />;
 };
 
 export default SettingProfilePage;

@@ -86,7 +86,7 @@ export const DashboardMenu = () => {
         />
         <MenuItem
           href='/setting/password'
-          title='パスワード変更'
+          title='パスワード設定'
           icon={<LockClosedIcon />}
           isActive={pathname === '/setting/password'}
         />

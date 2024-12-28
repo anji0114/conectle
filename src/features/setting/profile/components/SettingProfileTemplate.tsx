@@ -18,7 +18,7 @@ import {
 import { updateProfile } from '@/features/setting/profile/services/updateProfile';
 import { useProfile } from '@/hooks/useProfile';
 
-export const SettingProfile = () => {
+export const SettingProfileTemplate = () => {
   const { data: profile, isLoading: profileLoading, mutate } = useProfile();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>('');
