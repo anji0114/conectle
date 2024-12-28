@@ -12,34 +12,29 @@ const TopPage = () => {
     <div>
       <div className='flex flex-col items-center justify-center gap-5 px-10 py-24'>
         <h1 className='text-center text-3xl font-bold leading-normal lg:text-5xl lg:leading-normal'>
-          個人開発者のための
+          個人同士が繋がれる
           <br />
           <span className='bg-gradient-to-r from-sky-700 to-sky-500 bg-clip-text text-transparent'>
-            コミュニティプラットフォーム
+            求人プラットフォーム
           </span>
         </h1>
-        <p className='text-center text-xl leading-normal text-slate-700'>
-          コードレビュー、プロジェクト参加、技術的な議論。
-          <br />
-          開発者同士が繋がり、共に成長できる場所です。
-        </p>
         <div className='flex justify-center gap-2'>
+          <Link
+            href='/signup'
+            className={buttonStyle({
+              className: 'w-[140px]',
+            })}
+          >
+            求人を投稿する
+          </Link>
           <Link
             href='/login'
             className={buttonStyle({
               variant: 'outline',
-              className: 'w-[120px]',
+              className: 'w-[140px]',
             })}
           >
             ログイン
-          </Link>
-          <Link
-            href='/signup'
-            className={buttonStyle({
-              className: 'w-[120px]',
-            })}
-          >
-            無料で始める
           </Link>
         </div>
       </div>
