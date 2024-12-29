@@ -8,8 +8,8 @@ const linkTextStyle = tv({
   base: 'text-sm',
   variants: {
     variant: {
-      underline: 'underline underline-offset-4 hover:text-sky-600',
-      bold: 'font-bold hover:text-sky-600',
+      underline: 'underline underline-offset-4 hover:text-sky-500',
+      bold: 'font-bold hover:text-sky-500',
     },
   },
 });

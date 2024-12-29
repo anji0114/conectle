@@ -6,7 +6,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <AuthWrapper>
       <div className='flex min-h-[calc(100vh_-_64px)] bg-slate-50'>
         <DashboardMenu />
-        <div className='flex-1 p-10'>{children}</div>
+        <div className='flex-1'>{children}</div>
       </div>
     </AuthWrapper>
   );

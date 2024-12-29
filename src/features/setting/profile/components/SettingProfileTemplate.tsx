@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Upload } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { useToast } from '@/components/functional/ToastProvider';
 import { Alert } from '@/components/ui/Alert';
 import { Button } from '@/components/ui/Button';
+import { Container } from '@/components/ui/Container';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { FormRow } from '@/components/view/FormRow';
@@ -83,38 +85,45 @@ export const SettingProfileTemplate = () => {
   if (profileLoading) return <div className='text-center'>Loading...</div>;
 
   return (
-    <div className='pb-10'>
-      <h2 className='border-b border-slate-200 pb-4 text-xl font-bold'>
-        プロフィール編集
-      </h2>
-      <div className='mt-10 space-y-6'>
-        {error && <Alert type='error'>{error}</Alert>}
-        <FormRow label='ユーザー名'>
-          <Input variant='fill' {...register('username')} />
-        </FormRow>
-        <FormRow label='名前'>
-          <Input variant='fill' {...register('name')} />
-        </FormRow>
-        <FormRow label='紹介文'>
-          <Textarea
-            variant='fill'
-            className='resize-none'
-            {...register('introduce')}
-          />
-        </FormRow>
-        <FormRow label='関連リンク'>
-          <SettingProfileLinks control={control} />
-        </FormRow>
-        <div className='text-center'>
-          <Button
-            className='w-[160px]'
-            disabled={isLoading || !isValid}
-            onClick={handleSubmit(onSubmit)}
-          >
-            {isLoading ? '更新中...' : '更新'}
-          </Button>
+    <div className='p-10'>
+      <Container>
+        <h2 className='text-xl font-bold'>プロフィール編集</h2>
+        <div className='mt-10 space-y-6 rounded-2xl border border-slate-200 bg-white p-6'>
+          {error && <Alert type='error'>{error}</Alert>}
+          <div className='flex items-center gap-2'>
+            <div className='size-20 rounded-full bg-slate-200' />
+            <Button size='sm' variant='outline'>
+              <Upload size={16} />
+              変更する
+            </Button>
+          </div>
+          <FormRow label='ユーザー名'>
+            <Input variant='fill' {...register('username')} />
+          </FormRow>
+          <FormRow label='名前'>
+            <Input variant='fill' {...register('name')} />
+          </FormRow>
+          <FormRow label='紹介文'>
+            <Textarea
+              variant='fill'
+              className='resize-none'
+              {...register('introduce')}
+            />
+          </FormRow>
+          <FormRow label='関連リンク'>
+            <SettingProfileLinks control={control} />
+          </FormRow>
+          <div className='text-center'>
+            <Button
+              className='w-[160px]'
+              disabled={isLoading || !isValid}
+              onClick={handleSubmit(onSubmit)}
+            >
+              {isLoading ? '更新中...' : '更新'}
+            </Button>
+          </div>
         </div>
-      </div>
+      </Container>
     </div>
   );
 };

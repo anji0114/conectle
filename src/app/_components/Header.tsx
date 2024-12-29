@@ -23,7 +23,7 @@ export const Header = async () => {
           </h1>
           <div className='flex items-center gap-6'>
             <LinkText variant='bold' href='/listings'>
-              募集
+              募集を探す
             </LinkText>
           </div>
         </div>
