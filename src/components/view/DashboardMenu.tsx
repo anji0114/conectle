@@ -7,8 +7,9 @@ import type { FC, ReactNode } from 'react';
 import {
   BriefcaseBusiness,
   LayoutDashboardIcon,
-  MessageSquareMore,
-  Settings,
+  LockKeyhole,
+  Mail,
+  Send,
   Star,
   UserPen,
 } from 'lucide-react';
@@ -33,16 +34,16 @@ export const DashboardMenu = () => {
           isActive={pathname === '/dashboard/listings'}
         />
         <MenuItem
-          href='/dashboard/applications'
+          href='/dashboard/applicants'
           title='応募管理'
           icon={<Star size={20} />}
-          isActive={pathname === '/dashboard/applications'}
+          isActive={pathname === '/dashboard/applicants'}
         />
         <MenuItem
-          href='/dashboard/messages'
+          href='/messages'
           title='メッセージ'
-          icon={<MessageSquareMore size={20} />}
-          isActive={pathname === '/dashboard/messages'}
+          icon={<Send size={20} />}
+          isActive={pathname === '/messages'}
         />
         <MenuItem
           href='/setting/profile'
@@ -51,9 +52,15 @@ export const DashboardMenu = () => {
           isActive={pathname === '/setting/profile'}
         />
         <MenuItem
-          href='/setting/password'
+          href='/setting/mail'
           title='設定'
-          icon={<Settings size={20} />}
+          icon={<Mail size={20} />}
+          isActive={pathname === '/setting/mail'}
+        />
+        <MenuItem
+          href='/setting/password'
+          title='パスワード管理'
+          icon={<LockKeyhole size={20} />}
           isActive={pathname === '/setting/password'}
         />
       </ul>
